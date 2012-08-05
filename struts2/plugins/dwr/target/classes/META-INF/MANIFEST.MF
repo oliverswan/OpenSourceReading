@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2.validators;uses:="com.opensymphony.
+ xwork2.config.entities,com.opensymphony.xwork2,uk.ltd.getahead.dwr,ja
+ vax.servlet,org.apache.struts2.dispatcher,com.opensymphony.xwork2.inj
+ ect,com.opensymphony.xwork2.util.logging,javax.servlet.http";version=
+ "2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 DWR Plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Bundle-Name: Struts 2 DWR Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Build-Jdk: 1.7.0_05
+Bundle-Version: 2.3.5.SNAPSHOT
+Bnd-LastModified: 1342946985715
+Bundle-ManifestVersion: 2
+Specification-Title: Struts 2 DWR Plugin
+Bundle-Description: Apache Struts 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Specification-Version: 2.3.5-SNAPSHOT
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.config.entities;version="2.3",com.opensymphony.xwork2.inject;
+ version="2.3",com.opensymphony.xwork2.util.logging;version="2.3",java
+ x.servlet,javax.servlet.http,org.apache.struts2.dispatcher;version="2
+ .3",org.apache.struts2.validators;version="2.3",uk.ltd.getahead.dwr
+Bundle-SymbolicName: org.apache.struts.2-dwr-plugin
+Bundle-DocURL: http://www.apache.org
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

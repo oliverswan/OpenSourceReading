@@ -1,0 +1,73 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Struts 2 OVal Plugin
+
+
+From: 'an unknown organization'
+  - AOP alliance (http://aopalliance.sourceforge.net) aopalliance:aopalliance:jar:1.0
+    License: Public Domain 
+  - Javassist (http://www.javassist.org/) javassist:javassist:jar:3.11.0.GA
+
+  - FreeMarker (http://freemarker.org) org.freemarker:freemarker:jar:2.3.19
+    License: BSD-style license  (http://freemarker.org/LICENSE.txt)
+  - spring-aop  org.springframework:spring-aop:jar:3.0.5.RELEASE
+
+  - spring-asm  org.springframework:spring-asm:jar:3.0.5.RELEASE
+
+  - spring-beans  org.springframework:spring-beans:jar:3.0.5.RELEASE
+
+  - spring-context  org.springframework:spring-context:jar:3.0.5.RELEASE
+
+  - spring-core  org.springframework:spring-core:jar:3.0.5.RELEASE
+
+  - spring-expression  org.springframework:spring-expression:jar:3.0.5.RELEASE
+
+  - XML Pull Parsing API (http://www.xmlpull.org) xmlpull:xmlpull:jar:1.1.3.1
+    License: Public Domain  (http://www.xmlpull.org/v1/download/unpacked/LICENSE.txt)
+
+From: 'Apache Software Foundation' (http://www.apache.org)
+  - Struts 2 Core (http://struts.apache.org/2.x/struts2-core/) org.apache.struts:struts2-core:jar:2.3.5-SNAPSHOT
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - XWork: Core (http://struts.apache.org/2.x/xwork-core/) org.apache.struts.xwork:xwork-core:jar:2.3.5-SNAPSHOT
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Extreme! Lab, Indiana University' (http://www.extreme.indiana.edu/)
+  - MXP1: Xml Pull Parser 3rd Edition (XPP3) (http://www.extreme.indiana.edu/xgws/xsoap/xpp/mxp1/) xpp3:xpp3_min:jar:1.1.4c
+    License: Indiana University Extreme! Lab Software License, vesion 1.1.1  (http://www.extreme.indiana.edu/viewcvs/~checkout~/XPP3/java/LICENSE.txt)    License: Public Domain  (http://creativecommons.org/licenses/publicdomain)
+
+From: 'ObjectWeb' (http://www.objectweb.org/)
+  - ASM Core (http://asm.objectweb.org/asm/) asm:asm:jar:3.3
+    License: BSD  (http://asm.objectweb.org/license.html)
+  - ASM Commons (http://asm.objectweb.org/asm-commons/) asm:asm-commons:jar:3.3
+    License: BSD  (http://asm.objectweb.org/license.html)
+  - ASM Tree (http://asm.objectweb.org/asm-tree/) asm:asm-tree:jar:3.3
+    License: BSD  (http://asm.objectweb.org/license.html)
+
+From: 'OpenSymphony' (http://www.opensymphony.com)
+  - OGNL - Object Graph Navigation Library (http://ognl.org) ognl:ognl:jar:3.0.5
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Commons FileUpload (http://commons.apache.org/fileupload/) commons-fileupload:commons-fileupload:jar:1.2.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons IO (http://commons.apache.org/io/) commons-io:commons-io:jar:2.0.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Logging (http://commons.apache.org/logging) commons-logging:commons-logging:jar:1.1.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Lang (http://commons.apache.org/lang/) org.apache.commons:commons-lang3:jar:3.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The OVal Development Team' (http://oval.sf.net/)
+  - OVal (http://oval.sf.net) net.sf.oval:oval:jar:1.31
+    License: Eclipse Public License - v 1.0  (http://oval.sf.net/license/epl-v10.txt)
+
+From: 'XStream' (http://xstream.codehaus.org)
+  - XStream Core (http://codehaus.org/xstream-parent/xstream/) com.thoughtworks.xstream:xstream:jar:1.4.2
+    License: BSD style  (http://xstream.codehaus.com/license.html)
+
+
+
+

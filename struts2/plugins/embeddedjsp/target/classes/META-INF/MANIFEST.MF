@@ -1,0 +1,96 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2;uses:="org.apache.commons.lang3,org
+ .apache.struts2.dispatcher,com.opensymphony.xwork2,javax.tools,org.ap
+ ache.struts2.compiler,javax.servlet.jsp,com.opensymphony.xwork2.util.
+ finder,org.apache.struts2.jasper,javax.servlet,com.opensymphony.xwork
+ 2.util.logging,org.apache.commons.io,org.apache.struts2.views.util,ja
+ vax.servlet.http";version="2.3.5.SNAPSHOT",org.apache.struts2.compile
+ r;uses:="javax.tools";version="2.3.5.SNAPSHOT",org.apache.struts2.el;
+ uses:="javax.el,org.apache.struts2.el.lang,org.apache.struts2.el.util
+ ,org.apache.struts2.el.parser";version="2.3.5.SNAPSHOT",org.apache.st
+ ruts2.el.lang;uses:="org.apache.struts2.el.util,javax.el,org.apache.s
+ truts2.el.parser,org.apache.struts2.el";version="2.3.5.SNAPSHOT",org.
+ apache.struts2.el.parser;uses:="javax.el,org.apache.struts2.el.lang,o
+ rg.apache.struts2.el.util";version="2.3.5.SNAPSHOT",org.apache.struts
+ 2.el.util;uses:="javax.el,org.apache.struts2.el.lang";version="2.3.5.
+ SNAPSHOT",org.apache.struts2.jasper;uses:="org.apache.struts2.jasper.
+ compiler,javax.servlet,org.apache.juli.logging,org.apache.struts2.jas
+ per.xmlparser,com.opensymphony.xwork2.util.finder,org.apache.struts2.
+ jasper.servlet,org.apache.commons.lang3,javax.servlet.jsp.tagext";ver
+ sion="2.3.5.SNAPSHOT",org.apache.struts2.jasper.compiler;uses:="org.a
+ pache.struts2.jasper,javax.servlet.jsp.tagext,org.apache.juli.logging
+ ,org.apache.struts2.jasper.servlet,org.xml.sax,javax.el,org.apache.st
+ ruts2,org.apache.struts2.jasper.runtime,org.apache.struts2.jasper.xml
+ parser,javax.servlet,org.xml.sax.ext,javax.xml.parsers,org.xml.sax.he
+ lpers,org.apache.struts2.jasper.security,javax.servlet.jsp,org.apache
+ .struts2.jasper.el,org.apache.struts2.el,javax.servlet.jsp.el,org.apa
+ che.struts2.jasper.compiler.tagplugin,org.apache.commons.io,org.apach
+ e.struts2.el.lang";version="2.3.5.SNAPSHOT",org.apache.struts2.jasper
+ .compiler.tagplugin;version="2.3.5.SNAPSHOT",org.apache.struts2.jaspe
+ r.el;uses:="javax.el,javax.servlet.jsp.el";version="2.3.5.SNAPSHOT",o
+ rg.apache.struts2.jasper.resources;version="2.3.5.SNAPSHOT",org.apach
+ e.struts2.jasper.runtime;uses:="javax.naming,org.apache,javax.servlet
+ .jsp.tagext,javax.servlet.jsp,org.apache.struts2.jasper.compiler,java
+ x.servlet,javax.servlet.http,org.apache.struts2.jasper.el,javax.el,ja
+ vax.servlet.jsp.el,org.apache.struts2.el,org.apache.struts2.jasper.ut
+ il,org.apache.struts2.jasper,org.apache.jasper.runtime,org.apache.jul
+ i.logging,org.apache.struts2.jasper.security";version="2.3.5.SNAPSHOT
+ ",org.apache.struts2.jasper.security;uses:="org.apache.juli.logging,o
+ rg.apache.struts2.jasper";version="2.3.5.SNAPSHOT",org.apache.struts2
+ .jasper.servlet;uses:="org.apache.struts2.jasper,com.opensymphony.xwo
+ rk2.util.finder,javax.servlet,org.apache.struts2,com.opensymphony.xwo
+ rk2,org.apache.struts2.jasper.security,org.apache.struts2.jasper.comp
+ iler,org.apache.juli.logging,org.apache,javax.servlet.http,javax.serv
+ let.jsp.tagext,org.apache.struts2.jasper.runtime";version="2.3.5.SNAP
+ SHOT",org.apache.struts2.jasper.tagplugins.jstl;uses:="javax.servlet,
+ javax.servlet.http,org.apache.struts2.jasper,javax.servlet.jsp";versi
+ on="2.3.5.SNAPSHOT",org.apache.struts2.jasper.tagplugins.jstl.core;us
+ es:="org.apache.struts2.jasper.compiler.tagplugin,org.apache.struts2.
+ jasper.tagplugins.jstl";version="2.3.5.SNAPSHOT",org.apache.struts2.j
+ asper.util;version="2.3.5.SNAPSHOT",org.apache.struts2.jasper.xmlpars
+ er;uses:="org.apache.struts2.jasper.compiler,org.apache.struts2.jaspe
+ r,org.apache.juli.logging,org.xml.sax,javax.xml.parsers,org.w3c.dom";
+ version="2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 Embedded JSP Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 Embedded JSP Plugin
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-embeddedjsp-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 Embedded JSP Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946985091
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.util.finder;version="2.3",com.opensymphony.xwork2.util.loggin
+ g;version="2.3",javax.el,javax.naming,javax.servlet,javax.servlet.htt
+ p,javax.servlet.jsp,javax.servlet.jsp.el,javax.servlet.jsp.tagext,jav
+ ax.tools,javax.xml.parsers,org.apache,org.apache.commons.io;version="
+ 2.0",org.apache.commons.lang3;version="3.1",org.apache.jasper.runtime
+ ,org.apache.juli.logging,org.apache.struts2;version="2.3",org.apache.
+ struts2.compiler;version="2.3",org.apache.struts2.dispatcher;version=
+ "2.3",org.apache.struts2.el;version="2.3",org.apache.struts2.el.lang;
+ version="2.3",org.apache.struts2.el.parser;version="2.3",org.apache.s
+ truts2.el.util;version="2.3",org.apache.struts2.jasper;version="2.3",
+ org.apache.struts2.jasper.compiler;version="2.3",org.apache.struts2.j
+ asper.compiler.tagplugin;version="2.3",org.apache.struts2.jasper.el;v
+ ersion="2.3",org.apache.struts2.jasper.resources;version="2.3",org.ap
+ ache.struts2.jasper.runtime;version="2.3",org.apache.struts2.jasper.s
+ ecurity;version="2.3",org.apache.struts2.jasper.servlet;version="2.3"
+ ,org.apache.struts2.jasper.tagplugins.jstl;version="2.3",org.apache.s
+ truts2.jasper.tagplugins.jstl.core;version="2.3",org.apache.struts2.j
+ asper.util;version="2.3",org.apache.struts2.jasper.xmlparser;version=
+ "2.3",org.apache.struts2.views.util;version="2.3",org.w3c.dom,org.xml
+ .sax,org.xml.sax.ext,org.xml.sax.helpers
+Specification-Version: 2.3.5-SNAPSHOT
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Built-By: OliverLee
+Build-Jdk: 1.7.0_05
+Specification-Title: Struts 2 Configuration Browser Plugin
+Specification-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: Struts 2 Configuration Browser Plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Implementation-Vendor-Id: org.apache.struts
+Implementation-Vendor: Apache Software Foundation
+Created-By: 1.7.0_05 (Oracle Corporation)
+Export-Package: config-browser;version="2.3.5.SNAPSHOT",org.apache.str
+ uts2.config_browser;uses:="com.opensymphony.xwork2.config.entities,co
+ m.opensymphony.xwork2,com.opensymphony.xwork2.inject,com.opensymphony
+ .xwork2.util,com.opensymphony.xwork2.config,com.opensymphony.xwork2.v
+ alidator,com.opensymphony.xwork2.util.logging,org.apache.struts2.disp
+ atcher.mapper,com.opensymphony.xwork2.conversion,com.opensymphony.xwo
+ rk2.conversion.impl,org.apache.struts2.views.freemarker,org.apache.st
+ ruts2.views.velocity,org.apache.struts2.components,org.apache.struts2
+ .dispatcher.multipart,com.opensymphony.xwork2.util.reflection";versio
+ n="2.3.5.SNAPSHOT"
+Tool: Bnd-0.0.357
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-config-browser-plugin
+Bundle-Name: Struts 2 Configuration Browser Plugin
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Bnd-LastModified: 1342920041903
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.config;version="2.3",com.opensymphony.xwork2.config.entities;
+ version="2.3",com.opensymphony.xwork2.conversion;version="2.3",com.op
+ ensymphony.xwork2.conversion.impl;version="2.3",com.opensymphony.xwor
+ k2.inject;version="2.3",com.opensymphony.xwork2.util;version="2.3",co
+ m.opensymphony.xwork2.util.logging;version="2.3",com.opensymphony.xwo
+ rk2.util.reflection;version="2.3",com.opensymphony.xwork2.validator;v
+ ersion="2.3",config-browser;version="2.3",org.apache.struts2.componen
+ ts;version="2.3",org.apache.struts2.config_browser;version="2.3",org.
+ apache.struts2.dispatcher.mapper;version="2.3",org.apache.struts2.dis
+ patcher.multipart;version="2.3",org.apache.struts2.views.freemarker;v
+ ersion="2.3",org.apache.struts2.views.velocity;version="2.3"
+Originally-Created-By: Maven Integration for Eclipse
+

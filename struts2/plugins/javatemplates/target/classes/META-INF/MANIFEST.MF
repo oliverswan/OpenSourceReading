@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Built-By: OliverLee
+Build-Jdk: 1.7.0_05
+Specification-Title: Struts 2 Java Templates Plugin
+Specification-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: Struts 2 Java Templates Plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Implementation-Vendor-Id: org.apache.struts
+Implementation-Vendor: Apache Software Foundation
+Created-By: 1.7.0_05 (Oracle Corporation)
+Export-Package: org.apache.struts2.views.java;uses:="org.apache.common
+ s.lang3,com.opensymphony.xwork2.util.logging,org.apache.struts2,org.a
+ pache.struts2.components.template,org.apache.struts2.views.java.simpl
+ e,com.opensymphony.xwork2.util,com.opensymphony.xwork2.inject";versio
+ n="2.3.5.SNAPSHOT",org.apache.struts2.views.java.simple;uses:="org.ap
+ ache.commons.lang3,org.apache.struts2.components.template,org.apache.
+ struts2.util,org.apache.struts2.views.java,com.opensymphony.xwork2.ut
+ il,org.apache.struts2.views.util,org.apache.struts2.components,org.ap
+ ache.struts2,javax.servlet.http";version="2.3.5.SNAPSHOT"
+Tool: Bnd-0.0.357
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-javatemplates-plugin
+Bundle-Name: Struts 2 Java Templates Plugin
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Bnd-LastModified: 1342920046536
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2.inject;version="2.3",com.opens
+ ymphony.xwork2.util;version="2.3",com.opensymphony.xwork2.util.loggin
+ g;version="2.3",javax.servlet.http,org.apache.commons.lang3;version="
+ 3.1",org.apache.struts2;version="2.3",org.apache.struts2.components;v
+ ersion="2.3",org.apache.struts2.components.template;version="2.3",org
+ .apache.struts2.util;version="2.3",org.apache.struts2.views.java;vers
+ ion="2.3",org.apache.struts2.views.java.simple;version="2.3",org.apac
+ he.struts2.views.util;version="2.3"
+Originally-Created-By: Maven Integration for Eclipse
+

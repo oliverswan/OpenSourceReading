@@ -1,0 +1,89 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2;uses:="org.springframework.mock.web
+ .portlet,com.opensymphony.xwork2,com.opensymphony.xwork2.util.logging
+ ,javax.portlet,org.apache.struts2.portlet";version="2.3.5.SNAPSHOT",o
+ rg.apache.struts2.components;uses:="org.apache.struts2.portlet.contex
+ t,com.opensymphony.xwork2.util,com.opensymphony.xwork2,com.opensympho
+ ny.xwork2.inject,org.apache.struts2.views.util,org.apache.commons.lan
+ g3,org.apache.struts2.dispatcher.mapper,org.apache.struts2,org.apache
+ .struts2.portlet.util,javax.portlet,javax.servlet.http";version="2.3.
+ 5.SNAPSHOT",org.apache.struts2.portlet;uses:="javax.portlet";version=
+ "2.3.5.SNAPSHOT",org.apache.struts2.portlet.context;uses:="org.apache
+ .struts2.dispatcher.mapper,com.opensymphony.xwork2,org.apache.struts2
+ .portlet,javax.portlet";version="2.3.5.SNAPSHOT",org.apache.struts2.p
+ ortlet.dispatcher;uses:="com.opensymphony.xwork2,org.apache.struts2.i
+ nterceptor,org.apache.struts2.portlet,org.apache.commons.lang3,javax.
+ servlet,org.apache.struts2.dispatcher,javax.servlet.http,com.opensymp
+ hony.xwork2.util,com.opensymphony.xwork2.inject,com.opensymphony.xwor
+ k2.config,org.apache.struts2.portlet.servlet,org.apache.struts2.dispa
+ tcher.mapper,org.apache.struts2,org.apache.struts2.util,com.opensymph
+ ony.xwork2.util.logging,javax.portlet,org.apache.struts2.dispatcher.m
+ ultipart";version="2.3.5.SNAPSHOT",org.apache.struts2.portlet.interce
+ ptor;uses:="org.apache.struts2,com.opensymphony.xwork2,com.opensympho
+ ny.xwork2.util.logging,org.apache.struts2.interceptor,org.apache.stru
+ ts2.portlet,javax.portlet,com.opensymphony.xwork2.interceptor,javax.s
+ ervlet.http,org.apache.commons.lang3,com.opensymphony.xwork2.util,org
+ .apache.struts2.portlet.dispatcher";version="2.3.5.SNAPSHOT",org.apac
+ he.struts2.portlet.result;uses:="org.apache.struts2.dispatcher.mapper
+ ,com.opensymphony.xwork2.config.entities,com.opensymphony.xwork2,com.
+ opensymphony.xwork2.inject,org.apache.struts2.views.util,org.apache.s
+ truts2.portlet,javax.portlet,org.apache.struts2.portlet.context,javax
+ .servlet,org.apache.commons.lang3,org.apache.struts2.dispatcher,org.a
+ pache.struts2,com.opensymphony.xwork2.util.logging,javax.servlet.http
+ ,org.apache.struts2.views,com.opensymphony.xwork2.util,org.apache.vel
+ ocity.context,org.apache.struts2.views.velocity,javax.servlet.jsp,org
+ .apache.velocity,org.apache.velocity.app";version="2.3.5.SNAPSHOT",or
+ g.apache.struts2.portlet.servlet;uses:="javax.servlet,javax.portlet,j
+ avax.servlet.http,org.apache.struts2.portlet,com.opensymphony.xwork2.
+ util.logging";version="2.3.5.SNAPSHOT",org.apache.struts2.portlet.uti
+ l;uses:="org.apache.commons.lang3,org.apache.struts2.portlet.context,
+ org.apache.struts2,com.opensymphony.xwork2.util.logging,org.apache.st
+ ruts2.portlet,javax.portlet";version="2.3.5.SNAPSHOT",org.apache.stru
+ ts2.views.freemarker;uses:="org.apache.struts2.portlet.context,com.op
+ ensymphony.xwork2.util,com.opensymphony.xwork2,com.opensymphony.xwork
+ 2.inject,org.apache.struts2.views.util,javax.servlet,org.apache.strut
+ s2.dispatcher,org.apache.struts2,org.apache.struts2.portlet,javax.por
+ tlet,freemarker.template,javax.servlet.http";version="2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 Portlet Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 Portlet Plugin
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-portlet-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 Portlet Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946993154
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.config;version="2.3",com.opensymphony.xwork2.config.entities;
+ version="2.3",com.opensymphony.xwork2.inject;version="2.3",com.opensy
+ mphony.xwork2.interceptor;version="2.3",com.opensymphony.xwork2.util;
+ version="2.3",com.opensymphony.xwork2.util.logging;version="2.3",free
+ marker.template,javax.portlet;version="2.0",javax.servlet,javax.servl
+ et.http,javax.servlet.jsp,org.apache.commons.lang3;version="3.1",org.
+ apache.struts2;version="2.3",org.apache.struts2.components;version="2
+ .3",org.apache.struts2.dispatcher;version="2.3",org.apache.struts2.di
+ spatcher.mapper;version="2.3",org.apache.struts2.dispatcher.multipart
+ ;version="2.3",org.apache.struts2.interceptor;version="2.3",org.apach
+ e.struts2.portlet;version="2.3",org.apache.struts2.portlet.context;ve
+ rsion="2.3",org.apache.struts2.portlet.dispatcher;version="2.3",org.a
+ pache.struts2.portlet.interceptor;version="2.3",org.apache.struts2.po
+ rtlet.result;version="2.3",org.apache.struts2.portlet.servlet;version
+ ="2.3",org.apache.struts2.portlet.util;version="2.3",org.apache.strut
+ s2.util;version="2.3",org.apache.struts2.views;version="2.3",org.apac
+ he.struts2.views.freemarker;version="2.3",org.apache.struts2.views.ut
+ il;version="2.3",org.apache.struts2.views.velocity;version="2.3",org.
+ apache.velocity,org.apache.velocity.app,org.apache.velocity.context,o
+ rg.springframework.mock.web.portlet;version="3.0"
+Specification-Version: 2.3.5-SNAPSHOT
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

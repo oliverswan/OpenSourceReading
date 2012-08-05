@@ -1,0 +1,36 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2.views.jasperreports;uses:="net.sf.j
+ asperreports.engine,com.opensymphony.xwork2.util,com.opensymphony.xwo
+ rk2,net.sf.jasperreports.engine.util,javax.servlet,org.apache.commons
+ .lang3,org.apache.struts2.dispatcher,net.sf.jasperreports.engine.expo
+ rt,com.opensymphony.xwork2.util.logging,javax.servlet.http,org.apache
+ .struts2.util";version="2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 Jasper Reports Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 Jasper Reports Plugin
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-jasperreports-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 Jasper Reports Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946981659
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.util;version="2.3",com.opensymphony.xwork2.util.logging;versi
+ on="2.3",javax.servlet,javax.servlet.http,net.sf.jasperreports.engine
+ ,net.sf.jasperreports.engine.export,net.sf.jasperreports.engine.util,
+ org.apache.commons.lang3;version="3.1",org.apache.struts2.dispatcher;
+ version="2.3",org.apache.struts2.util;version="2.3",org.apache.struts
+ 2.views.jasperreports;version="2.3"
+Specification-Version: 2.3.5-SNAPSHOT
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Built-By: OliverLee
+Build-Jdk: 1.7.0_05
+Specification-Title: Struts 2 TestNG Plugin
+Specification-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: Struts 2 TestNG Plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Implementation-Vendor-Id: org.apache.struts
+Implementation-Vendor: Apache Software Foundation
+Created-By: 1.7.0_05 (Oracle Corporation)
+Export-Package: org.apache.struts2;uses:="javax.servlet,org.apache.str
+ uts2.dispatcher,org.testng.annotations,org.apache.struts2.util,com.op
+ ensymphony.xwork2,com.opensymphony.xwork2.inject,com.opensymphony.xwo
+ rk2.config,org.springframework.mock.web";version="2.3.5.SNAPSHOT"
+Tool: Bnd-0.0.357
+Bundle-Name: Struts 2 TestNG Plugin
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Bnd-LastModified: 1342920010826
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.config;version="2.3",com.opensymphony.xwork2.inject;version="
+ 2.3",javax.servlet,org.apache.struts2;version="2.3",org.apache.struts
+ 2.dispatcher;version="2.3",org.apache.struts2.util;version="2.3",org.
+ springframework.mock.web;version="3.0",org.testng.annotations
+Bundle-SymbolicName: org.apache.struts.2-testng-plugin
+Bundle-DocURL: http://www.apache.org
+Originally-Created-By: Maven Integration for Eclipse
+

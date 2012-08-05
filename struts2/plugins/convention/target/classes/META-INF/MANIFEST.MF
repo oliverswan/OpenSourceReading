@@ -1,0 +1,44 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2.convention;uses:="org.apache.struts
+ 2.dispatcher,com.opensymphony.xwork2.inject,com.opensymphony.xwork2.u
+ til.location,com.opensymphony.xwork2.config,com.opensymphony.xwork2.c
+ onfig.providers,com.opensymphony.xwork2.util,com.opensymphony.xwork2,
+ javax.servlet,com.opensymphony.xwork2.config.entities,com.opensymphon
+ y.xwork2.util.logging,org.apache.struts2.convention.annotation,org.ap
+ ache.commons.lang3,com.opensymphony.xwork2.util.finder,org.apache.str
+ uts2,com.opensymphony.xwork2.util.classloader";version="2.3.5.SNAPSHO
+ T",org.apache.struts2.convention.annotation;version="2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 Convention Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 Convention Plugin
+Bundle-Activator: org.apache.struts2.osgi.StrutsActivator
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-convention-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 Convention Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946988290
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.config;version="2.3",com.opensymphony.xwork2.config.entities;
+ version="2.3",com.opensymphony.xwork2.config.providers;version="2.3",
+ com.opensymphony.xwork2.inject;version="2.3",com.opensymphony.xwork2.
+ util;version="2.3",com.opensymphony.xwork2.util.classloader;version="
+ 2.3",com.opensymphony.xwork2.util.finder;version="2.3",com.opensympho
+ ny.xwork2.util.location;version="2.3",com.opensymphony.xwork2.util.lo
+ gging;version="2.3",javax.servlet,org.apache.commons.lang3;version="3
+ .1",org.apache.struts2;version="2.3",org.apache.struts2.convention;ve
+ rsion="2.3",org.apache.struts2.convention.annotation;version="2.3",or
+ g.apache.struts2.dispatcher;version="2.3",org.apache.struts2.osgi
+Specification-Version: 2.3.5-SNAPSHOT
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

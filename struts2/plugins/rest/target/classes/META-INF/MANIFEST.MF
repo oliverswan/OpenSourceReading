@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2.rest;uses:="com.opensymphony.xwork2
+ .config.entities,org.apache.struts2.rest.handler,javax.servlet.http,j
+ avax.servlet,org.apache.struts2,com.opensymphony.xwork2,com.opensymph
+ ony.xwork2.inject,com.opensymphony.xwork2.interceptor,com.opensymphon
+ y.xwork2.util,com.opensymphony.xwork2.util.location,com.opensymphony.
+ xwork2.config,org.apache.struts2.dispatcher,com.opensymphony.xwork2.u
+ til.logging,com.opensymphony.xwork2.util.profiling,org.apache.struts2
+ .dispatcher.mapper";version="2.3.5.SNAPSHOT",org.apache.struts2.rest.
+ handler;uses:="org.codehaus.jackson.map,com.opensymphony.xwork2.injec
+ t,net.sf.json,com.thoughtworks.xstream";version="2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 REST Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 REST Plugin
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-rest-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 REST Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946978493
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.config;version="2.3",com.opensymphony.xwork2.config.entities;
+ version="2.3",com.opensymphony.xwork2.inject;version="2.3",com.opensy
+ mphony.xwork2.interceptor;version="2.3",com.opensymphony.xwork2.util;
+ version="2.3",com.opensymphony.xwork2.util.location;version="2.3",com
+ .opensymphony.xwork2.util.logging;version="2.3",com.opensymphony.xwor
+ k2.util.profiling;version="2.3",com.thoughtworks.xstream,javax.servle
+ t,javax.servlet.http,net.sf.json,org.apache.struts2;version="2.3",org
+ .apache.struts2.dispatcher;version="2.3",org.apache.struts2.dispatche
+ r.mapper;version="2.3",org.apache.struts2.rest;version="2.3",org.apac
+ he.struts2.rest.handler;version="2.3",org.codehaus.jackson.map;versio
+ n="1.9"
+Specification-Version: 2.3.5-SNAPSHOT
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

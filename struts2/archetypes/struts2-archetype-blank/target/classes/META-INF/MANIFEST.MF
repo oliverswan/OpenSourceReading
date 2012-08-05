@@ -1,0 +1,45 @@
+Manifest-Version: 1.0
+Built-By: OliverLee
+Build-Jdk: 1.7.0_05
+Specification-Title: Struts 2 Archetypes - Blank
+Specification-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: Struts 2 Archetypes - Blank
+Implementation-Version: 2.3.5-SNAPSHOT
+Implementation-Vendor-Id: org.apache.struts
+Implementation-Vendor: Apache Software Foundation
+Created-By: 1.7.0_05 (Oracle Corporation)
+Export-Package: archetype-resources;version="2.3.5.SNAPSHOT",archetype
+ -resources.src.main.java.example;version="2.3.5.SNAPSHOT",archetype-r
+ esources.src.main.resources;version="2.3.5.SNAPSHOT",archetype-resour
+ ces.src.main.resources.example;version="2.3.5.SNAPSHOT",archetype-res
+ ources.src.main.webapp;version="2.3.5.SNAPSHOT",archetype-resources.s
+ rc.main.webapp.WEB-INF;version="2.3.5.SNAPSHOT",archetype-resources.s
+ rc.main.webapp.example;version="2.3.5.SNAPSHOT",archetype-resources.s
+ rc.test.java.example;version="2.3.5.SNAPSHOT",main.java.example;versi
+ on="2.3.5.SNAPSHOT",main.resources;version="2.3.5.SNAPSHOT",main.reso
+ urces.example;version="2.3.5.SNAPSHOT",main.webapp;version="2.3.5.SNA
+ PSHOT",main.webapp.WEB-INF;version="2.3.5.SNAPSHOT",main.webapp.examp
+ le;version="2.3.5.SNAPSHOT",test.java.example;version="2.3.5.SNAPSHOT"
+Tool: Bnd-0.0.357
+Bundle-Name: Struts 2 Archetypes - Blank
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Bnd-LastModified: 1342920039547
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Import-Package: archetype-resources;version="2.3",archetype-resources.
+ src.main.java.example;version="2.3",archetype-resources.src.main.reso
+ urces;version="2.3",archetype-resources.src.main.resources.example;ve
+ rsion="2.3",archetype-resources.src.main.webapp;version="2.3",archety
+ pe-resources.src.main.webapp.WEB-INF;version="2.3",archetype-resource
+ s.src.main.webapp.example;version="2.3",archetype-resources.src.test.
+ java.example;version="2.3",main.java.example;version="2.3",main.resou
+ rces;version="2.3",main.resources.example;version="2.3",main.webapp;v
+ ersion="2.3",main.webapp.WEB-INF;version="2.3",main.webapp.example;ve
+ rsion="2.3",test.java.example;version="2.3"
+Bundle-SymbolicName: org.apache.struts.2-archetype-blank
+Bundle-DocURL: http://www.apache.org
+Originally-Created-By: Maven Integration for Eclipse
+

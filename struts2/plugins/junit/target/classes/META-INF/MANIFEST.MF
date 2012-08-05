@@ -1,0 +1,46 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2;uses:="com.opensymphony.xwork2.util
+ ,com.opensymphony.xwork2,com.opensymphony.xwork2.inject,org.springfra
+ mework.core.io,com.opensymphony.xwork2.util.logging.jdk,com.opensymph
+ ony.xwork2.interceptor.annotations,com.opensymphony.xwork2.config,org
+ .junit,org.apache.commons.lang3,javax.servlet,org.apache.struts2.disp
+ atcher.mapper,org.apache.struts2.dispatcher,org.apache.struts2.util,c
+ om.opensymphony.xwork2.util.logging,org.springframework.mock.web,java
+ x.servlet.http,org.springframework.beans,org.springframework.context,
+ org.springframework.web.context,org.springframework.test.context.supp
+ ort";version="2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 JUnit Plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Bundle-Name: Struts 2 JUnit Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Build-Jdk: 1.7.0_05
+Bundle-Version: 2.3.5.SNAPSHOT
+Bnd-LastModified: 1342946990505
+Bundle-ManifestVersion: 2
+Specification-Title: Struts 2 JUnit Plugin
+Bundle-Description: Apache Struts 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Specification-Version: 2.3.5-SNAPSHOT
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.config;version="2.3",com.opensymphony.xwork2.inject;version="
+ 2.3",com.opensymphony.xwork2.interceptor.annotations;version="2.3",co
+ m.opensymphony.xwork2.util;version="2.3",com.opensymphony.xwork2.util
+ .logging;version="2.3",com.opensymphony.xwork2.util.logging.jdk;versi
+ on="2.3",javax.servlet,javax.servlet.http,org.apache.commons.lang3;ve
+ rsion="3.1",org.apache.struts2;version="2.3",org.apache.struts2.dispa
+ tcher;version="2.3",org.apache.struts2.dispatcher.mapper;version="2.3
+ ",org.apache.struts2.util;version="2.3",org.junit,org.springframework
+ .beans;version="3.0",org.springframework.context;version="3.0",org.sp
+ ringframework.core.io;version="3.0",org.springframework.mock.web;vers
+ ion="3.0",org.springframework.test.context.support;version="3.0",org.
+ springframework.web.context;version="3.0"
+Bundle-SymbolicName: org.apache.struts.2-junit-plugin
+Bundle-DocURL: http://www.apache.org
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

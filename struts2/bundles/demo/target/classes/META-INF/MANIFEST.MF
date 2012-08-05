@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Implementation-Title: Struts 2 OSGi Demo Bundle
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Built-By: OliverLee
+Struts2-Enabled: true
+Tool: Bnd-0.0.357
+Bundle-Name: Struts 2 OSGi Demo Bundle
+Created-By: Apache Maven Bundle Plugin
+Implementation-Vendor: Apache Software Foundation
+Bundle-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Build-Jdk: 1.7.0_05
+Bundle-Version: 2.3.5.SNAPSHOT
+Bnd-LastModified: 1342917860450
+Spring-Context: *;create-asynchronously:=false
+Specification-Title: Struts 2 OSGi Demo Bundle
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Specification-Version: 2.3.5-SNAPSHOT
+Import-Package: com.opensymphony.xwork2
+Bundle-SymbolicName: org.apache.struts.2-osgi-demo-bundle
+Bundle-DocURL: http://www.apache.org
+

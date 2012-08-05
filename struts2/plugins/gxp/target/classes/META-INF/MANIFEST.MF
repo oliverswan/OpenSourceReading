@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Built-By: OliverLee
+Build-Jdk: 1.7.0_05
+Specification-Title: Struts 2 GXP Plugin
+Specification-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Implementation-Title: Struts 2 GXP Plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Implementation-Vendor-Id: org.apache.struts
+Implementation-Vendor: Apache Software Foundation
+Created-By: 1.7.0_05 (Oracle Corporation)
+Export-Package: org.apache.struts2.views.gxp;uses:="com.opensymphony.x
+ work2.util,com.opensymphony.xwork2,com.opensymphony.xwork2.inject,com
+ .google.gxp.base,org.apache.struts2,javax.servlet.http,com.google.com
+ mon.base,com.google.common.collect,com.google.gxp.html";version="2.3.
+ 5.SNAPSHOT"
+Tool: Bnd-0.0.357
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-gxp-plugin
+Bundle-Name: Struts 2 GXP Plugin
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Bnd-LastModified: 1342920046115
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.google.common.base,com.google.common.collect,com.g
+ oogle.gxp.base,com.google.gxp.html,com.opensymphony.xwork2;version="2
+ .3",com.opensymphony.xwork2.inject;version="2.3",com.opensymphony.xwo
+ rk2.util;version="2.3",javax.servlet.http,org.apache.struts2;version=
+ "2.3",org.apache.struts2.views.gxp;version="2.3"
+Originally-Created-By: Maven Integration for Eclipse
+

@@ -1,0 +1,42 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2.tiles;uses:="javax.servlet,org.apac
+ he.tiles,org.apache.tiles.context,org.apache.tiles.preparer,org.apach
+ e.tiles.impl,org.apache.tiles.definition,org.apache.tiles.factory,org
+ .apache.tiles.web.startup,com.opensymphony.xwork2.util.logging,org.ap
+ ache.struts2,com.opensymphony.xwork2,com.opensymphony.xwork2.inject,o
+ rg.apache.struts2.views.freemarker,javax.servlet.http";version="2.3.5
+ .SNAPSHOT",org.apache.struts2.views.tiles;uses:="javax.servlet,org.ap
+ ache.tiles,org.apache.struts2.dispatcher,org.apache.tiles.access,org.
+ apache.struts2,com.opensymphony.xwork2,javax.servlet.http";version="2
+ .3.5.SNAPSHOT"
+Implementation-Title: Struts 2 Tiles Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 Tiles Plugin
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-tiles-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 Tiles Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946977837
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.inject;version="2.3",com.opensymphony.xwork2.util.logging;ver
+ sion="2.3",javax.servlet,javax.servlet.http,org.apache.struts2;versio
+ n="2.3",org.apache.struts2.dispatcher;version="2.3",org.apache.struts
+ 2.tiles;version="2.3",org.apache.struts2.views.freemarker;version="2.
+ 3",org.apache.struts2.views.tiles;version="2.3",org.apache.tiles,org.
+ apache.tiles.access,org.apache.tiles.context,org.apache.tiles.definit
+ ion,org.apache.tiles.factory,org.apache.tiles.impl,org.apache.tiles.p
+ reparer,org.apache.tiles.web.startup
+Specification-Version: 2.3.5-SNAPSHOT
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

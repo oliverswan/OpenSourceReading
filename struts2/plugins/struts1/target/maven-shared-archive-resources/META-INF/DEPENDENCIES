@@ -1,0 +1,63 @@
+// ------------------------------------------------------------------
+// Transitive dependencies of this project determined from the
+// maven pom organized by organization.
+// ------------------------------------------------------------------
+
+Struts 2 Struts 1 Plugin
+
+
+From: 'an unknown organization'
+  - antlr  antlr:antlr:jar:2.7.2
+
+  - Javassist (http://www.javassist.org/) javassist:javassist:jar:3.11.0.GA
+
+  - FreeMarker (http://freemarker.org) org.freemarker:freemarker:jar:2.3.19
+    License: BSD-style license  (http://freemarker.org/LICENSE.txt)
+  - oro  oro:oro:jar:2.0.8
+
+
+From: 'Apache Software Foundation' (http://www.apache.org)
+  - Struts 2 Core (http://struts.apache.org/2.x/struts2-core/) org.apache.struts:struts2-core:jar:2.3.5-SNAPSHOT
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - XWork: Core (http://struts.apache.org/2.x/xwork-core/) org.apache.struts.xwork:xwork-core:jar:2.3.5-SNAPSHOT
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'Apache Software Foundation' (http://www.apache.org/)
+  - Struts Core (http://struts.apache.org) org.apache.struts:struts-core:jar:1.3.10
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'ObjectWeb' (http://www.objectweb.org/)
+  - ASM Core (http://asm.objectweb.org/asm/) asm:asm:jar:3.3
+    License: BSD  (http://asm.objectweb.org/license.html)
+  - ASM Commons (http://asm.objectweb.org/asm-commons/) asm:asm-commons:jar:3.3
+    License: BSD  (http://asm.objectweb.org/license.html)
+  - ASM Tree (http://asm.objectweb.org/asm-tree/) asm:asm-tree:jar:3.3
+    License: BSD  (http://asm.objectweb.org/license.html)
+
+From: 'OpenSymphony' (http://www.opensymphony.com)
+  - OGNL - Object Graph Navigation Library (http://ognl.org) ognl:ognl:jar:3.0.5
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+From: 'The Apache Software Foundation' (http://jakarta.apache.org)
+  - Validator (http://jakarta.apache.org/commons/${pom.artifactId.substring(8)}/) commons-validator:commons-validator:jar:1.3.1
+    License: The Apache Software License, Version 2.0  (/LICENSE.txt)
+
+From: 'The Apache Software Foundation' (http://www.apache.org/)
+  - Commons BeanUtils (http://commons.apache.org/beanutils/) commons-beanutils:commons-beanutils:jar:1.8.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Chain (http://commons.apache.org/chain/) commons-chain:commons-chain:jar:1.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Digester (http://commons.apache.org/digester/) commons-digester:commons-digester:jar:2.0
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons FileUpload (http://commons.apache.org/fileupload/) commons-fileupload:commons-fileupload:jar:1.2.2
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons IO (http://commons.apache.org/io/) commons-io:commons-io:jar:2.0.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Logging (http://commons.apache.org/logging) commons-logging:commons-logging:jar:1.1.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+  - Commons Lang (http://commons.apache.org/lang/) org.apache.commons:commons-lang3:jar:3.1
+    License: The Apache Software License, Version 2.0  (http://www.apache.org/licenses/LICENSE-2.0.txt)
+
+
+
+

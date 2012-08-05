@@ -1,0 +1,48 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2.json;uses:="com.opensymphony.xwork2
+ .util,com.opensymphony.xwork2.util.logging,com.opensymphony.xwork2,co
+ m.opensymphony.xwork2.inject,org.apache.struts2.json.rpc,org.apache.s
+ truts2.dispatcher,org.apache.struts2,com.opensymphony.xwork2.intercep
+ tor,org.apache.struts2.json.annotations,javax.servlet.http,org.apache
+ .struts2.json.smd,org.apache.commons.lang3,javax.servlet,org.apache.s
+ truts2.json.bridge";version="2.3.5.SNAPSHOT",org.apache.struts2.json.
+ annotations;uses:="org.apache.struts2.json.bridge";version="2.3.5.SNA
+ PSHOT",org.apache.struts2.json.bridge;version="2.3.5.SNAPSHOT",org.ap
+ ache.struts2.json.rpc;uses:="com.opensymphony.xwork2.util.logging";ve
+ rsion="2.3.5.SNAPSHOT",org.apache.struts2.json.smd;uses:="com.opensym
+ phony.xwork2,com.opensymphony.xwork2.util.logging,org.apache.struts2.
+ json,org.apache.struts2.json.annotations,javax.servlet.http";version=
+ "2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 JSON Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 JSON Plugin
+Bundle-Activator: org.apache.struts2.osgi.StrutsActivator
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-json-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 JSON Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946994246
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.inject;version="2.3",com.opensymphony.xwork2.interceptor;vers
+ ion="2.3",com.opensymphony.xwork2.util;version="2.3",com.opensymphony
+ .xwork2.util.logging;version="2.3",javax.servlet,javax.servlet.http,o
+ rg.apache.commons.lang3;version="3.1",org.apache.struts2;version="2.3
+ ",org.apache.struts2.dispatcher;version="2.3",org.apache.struts2.json
+ ;version="2.3",org.apache.struts2.json.annotations;version="2.3",org.
+ apache.struts2.json.bridge;version="2.3",org.apache.struts2.json.rpc;
+ version="2.3",org.apache.struts2.json.smd;version="2.3",org.apache.st
+ ruts2.osgi
+Specification-Version: 2.3.5-SNAPSHOT
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

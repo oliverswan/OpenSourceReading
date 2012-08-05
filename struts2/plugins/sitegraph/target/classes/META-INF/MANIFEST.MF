@@ -1,0 +1,51 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2;version="2.3.5.SNAPSHOT",org.apache
+ .struts2.sitegraph;uses:="org.apache.struts2,com.opensymphony.xwork2.
+ util.logging,org.apache.struts2.sitegraph.renderers,javax.servlet,org
+ .apache.struts2.sitegraph.entities,org.apache.struts2.config,com.open
+ symphony.xwork2.config.entities,com.opensymphony.xwork2.config";versi
+ on="2.3.5.SNAPSHOT",org.apache.struts2.sitegraph.entities;uses:="com.
+ opensymphony.xwork2.util.logging";version="2.3.5.SNAPSHOT",org.apache
+ .struts2.sitegraph.model;version="2.3.5.SNAPSHOT",org.apache.struts2.
+ sitegraph.renderers;uses:="org.apache.struts2.sitegraph.model,org.apa
+ che.struts2.sitegraph.entities,com.opensymphony.xwork2.config.entitie
+ s,com.opensymphony.xwork2,org.apache.struts2.sitegraph";version="2.3.
+ 5.SNAPSHOT"
+Implementation-Title: Struts 2 Sitegraph Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 Sitegraph Plugin
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-sitegraph-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Class-Path: org.mortbay.jetty-5.1.4.jar jdtcore-3.1.0.jar ant-1.6.5.ja
+ r jasper-compiler-5.5.12.jar jasper-runtime-5.5.12.jar jasper-compile
+ r-jdt-5.5.12.jar commons-el-1.0.jar commons-logging-1.1.1.jar commons
+ -io-2.0.1.jar commons-lang3-3.1.jar struts2-core-2.3.5-SNAPSHOT.jar x
+ work-core-2.3.5-SNAPSHOT.jar asm-3.3.jar asm-commons-3.3.jar asm-tree
+ -3.3.jar freemarker-2.3.19.jar ognl-3.0.5.jar javassist-3.11.0.GA.jar
+  commons-fileupload-1.2.2.jar
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 Sitegraph Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946991500
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.xwork2;version="2.3",com.opensymphony
+ .xwork2.config;version="2.3",com.opensymphony.xwork2.config.entities;
+ version="2.3",com.opensymphony.xwork2.util.logging;version="2.3",java
+ x.servlet,org.apache.struts2;version="2.3",org.apache.struts2.config;
+ version="2.3",org.apache.struts2.sitegraph;version="2.3",org.apache.s
+ truts2.sitegraph.entities;version="2.3",org.apache.struts2.sitegraph.
+ model;version="2.3",org.apache.struts2.sitegraph.renderers;version="2
+ .3"
+Specification-Version: 2.3.5-SNAPSHOT
+Main-Class: org.apache.struts2.sitegraph.SiteGraph
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+

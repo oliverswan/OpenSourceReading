@@ -1,0 +1,56 @@
+Manifest-Version: 1.0
+Export-Package: org.apache.struts2.sitemesh;uses:="com.opensymphony.xw
+ ork2.util,com.opensymphony.module.sitemesh,com.opensymphony.xwork2,co
+ m.opensymphony.xwork2.inject,javax.servlet,org.apache.struts2.dispatc
+ her,org.apache.struts2,freemarker.core,com.opensymphony.xwork2.util.l
+ ogging,freemarker.ext.servlet,org.apache.struts2.views.freemarker,fre
+ emarker.template,javax.servlet.http,org.apache.struts2.dispatcher.ng.
+ listener,com.opensymphony.sitemesh.webapp.decorator,com.opensymphony.
+ sitemesh.webapp,com.opensymphony.sitemesh.compatability,com.opensymph
+ ony.sitemesh,com.opensymphony.module.sitemesh.mapper,com.opensymphony
+ .xwork2.interceptor,org.apache.struts2.dispatcher.mapper,com.opensymp
+ hony.xwork2.util.profiling,org.apache.velocity.context,org.apache.str
+ uts2.views.velocity,org.apache.velocity,org.apache.velocity.app,org.a
+ pache.commons.lang3,com.opensymphony.module.sitemesh.factory,org.apac
+ he.velocity.tools.view.servlet,org.apache.velocity.tools.view,com.ope
+ nsymphony.module.sitemesh.util";version="2.3.5.SNAPSHOT"
+Implementation-Title: Struts 2 Sitemesh Plugin
+Built-By: OliverLee
+Tool: Bnd-0.0.357
+Implementation-Vendor: Apache Software Foundation
+Implementation-Vendor-Id: org.apache.struts
+Specification-Title: Struts 2 Sitemesh Plugin
+Bundle-License: http://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-SymbolicName: org.apache.struts.2-sitemesh-plugin
+Implementation-Version: 2.3.5-SNAPSHOT
+Specification-Vendor: Apache Software Foundation
+Bundle-Name: Struts 2 Sitemesh Plugin
+Created-By: 1.7.0_05 (Oracle Corporation)
+Bundle-Vendor: Apache Software Foundation
+Bundle-Version: 2.3.5.SNAPSHOT
+Build-Jdk: 1.7.0_05
+Bnd-LastModified: 1342946977182
+Bundle-ManifestVersion: 2
+Bundle-Description: Apache Struts 2
+Bundle-DocURL: http://www.apache.org
+Import-Package: com.opensymphony.module.sitemesh,com.opensymphony.modu
+ le.sitemesh.factory,com.opensymphony.module.sitemesh.mapper,com.opens
+ ymphony.module.sitemesh.util,com.opensymphony.sitemesh,com.opensympho
+ ny.sitemesh.compatability,com.opensymphony.sitemesh.webapp,com.opensy
+ mphony.sitemesh.webapp.decorator,com.opensymphony.xwork2;version="2.3
+ ",com.opensymphony.xwork2.inject;version="2.3",com.opensymphony.xwork
+ 2.interceptor;version="2.3",com.opensymphony.xwork2.util;version="2.3
+ ",com.opensymphony.xwork2.util.logging;version="2.3",com.opensymphony
+ .xwork2.util.profiling;version="2.3",freemarker.core,freemarker.ext.s
+ ervlet,freemarker.template,javax.servlet,javax.servlet.http,org.apach
+ e.commons.lang3;version="3.1",org.apache.struts2;version="2.3",org.ap
+ ache.struts2.dispatcher;version="2.3",org.apache.struts2.dispatcher.m
+ apper;version="2.3",org.apache.struts2.dispatcher.ng.listener;version
+ ="2.3",org.apache.struts2.sitemesh;version="2.3",org.apache.struts2.v
+ iews.freemarker;version="2.3",org.apache.struts2.views.velocity;versi
+ on="2.3",org.apache.velocity,org.apache.velocity.app,org.apache.veloc
+ ity.context,org.apache.velocity.tools.view,org.apache.velocity.tools.
+ view.servlet
+Specification-Version: 2.3.5-SNAPSHOT
+Originally-Created-By: 1.7.0_05 (Oracle Corporation)
+
