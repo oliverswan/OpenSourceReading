@@ -27,8 +27,8 @@ import java.util.Map;
  * @author Jason Carreira
  */
 public class DefaultActionProxyFactory implements ActionProxyFactory {
-
-    protected Container container;
+	
+    protected Container container;// 依赖注入容器
     
     public DefaultActionProxyFactory() {
         super();
@@ -54,7 +54,7 @@ public class DefaultActionProxyFactory implements ActionProxyFactory {
     public ActionProxy createActionProxy(String namespace, String actionName, String methodName, Map<String, Object> extraContext, boolean executeResult, boolean cleanupContext) {
         
         ActionInvocation inv = new DefaultActionInvocation(extraContext, true);
-        container.inject(inv);
+        container.inject(inv);// 将inv的成员属性注入
         return createActionProxy(inv, namespace, actionName, methodName, executeResult, cleanupContext);
     }
     
@@ -66,8 +66,8 @@ public class DefaultActionProxyFactory implements ActionProxyFactory {
     public ActionProxy createActionProxy(ActionInvocation inv, String namespace, String actionName, String methodName, boolean executeResult, boolean cleanupContext) {
 
         DefaultActionProxy proxy = new DefaultActionProxy(inv, namespace, actionName, methodName, executeResult, cleanupContext);
-        container.inject(proxy);
-        proxy.prepare();
+        container.inject(proxy);// 注入
+        proxy.prepare();// 初始化
         return proxy;
     }
 

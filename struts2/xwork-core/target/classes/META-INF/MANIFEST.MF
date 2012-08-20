@@ -138,7 +138,7 @@ Created-By: 1.7.0_05 (Oracle Corporation)
 Bundle-Vendor: Apache Software Foundation
 Bundle-Version: 2.3.5.SNAPSHOT
 Build-Jdk: 1.7.0_05
-Bnd-LastModified: 1344175596727
+Bnd-LastModified: 1345476696753
 Bundle-ManifestVersion: 2
 Bundle-Description: Apache Struts 2
 Bundle-DocURL: http://www.apache.org

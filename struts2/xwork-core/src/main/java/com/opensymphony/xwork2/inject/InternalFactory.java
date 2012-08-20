@@ -19,7 +19,7 @@ package com.opensymphony.xwork2.inject;
 import java.io.Serializable;
 
 /**
- * Creates objects which will be injected.
+ * 创建被注入对象的内部工厂
  *
  * @author crazybob@google.com (Bob Lee)
  */

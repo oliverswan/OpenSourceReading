@@ -17,10 +17,8 @@
 package com.opensymphony.xwork2.inject.util;
 
 /**
- * A Function provides a transformation on an object and returns the resulting
- * object.  For example, a {@code StringToIntegerFunction} may implement
- * <code>Function&lt;String,Integer&gt;</code> and transform integers in String
- * format to Integer format.
+ * 对一个对象进行转换，并返回结果对象。
+ * 比如StringToIntegerFunction将String转换为Integer
  *
  * <p>The transformation on the source object does not necessarily result in
  * an object of a different type.  For example, a

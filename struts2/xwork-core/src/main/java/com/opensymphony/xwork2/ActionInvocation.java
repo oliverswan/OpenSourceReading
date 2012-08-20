@@ -22,17 +22,21 @@ import java.io.Serializable;
 
 
 /**
- * An {@link ActionInvocation} represents the execution state of an {@link Action}. It holds the Interceptors and the Action instance.
- * By repeated re-entrant execution of the <code>invoke()</code> method, initially by the {@link ActionProxy}, then by the Interceptors, the
- * Interceptors are all executed, and then the {@link Action} and the {@link Result}.
- *
+ * 用来描述一个Action的执行状态。
+ * 
+ * ActionInvocation持有Interceptors和 Action实例
+ * 
+ * 通过re entrant地重复执行invoke方法，
+ * 
+ * 首先是ActionProxy，然后是Interceptors，然后是Action，然后是Result
+ * 
  * @author Jason Carreira
  * @see com.opensymphony.xwork2.ActionProxy
  */
 public interface ActionInvocation extends Serializable {
 
     /**
-     * Get the Action associated with this ActionInvocation.
+     * 返回绑定的Action
      *
      * @return the Action
      */
@@ -47,6 +51,8 @@ public interface ActionInvocation extends Serializable {
     boolean isExecuted();
 
     /**
+     * 返回绑定的ActionContext
+     * 
      * Gets the ActionContext associated with this ActionInvocation. The ActionProxy is
      * responsible for setting this ActionContext onto the ThreadLocal before invoking
      * the ActionInvocation and resetting the old ActionContext afterwards.
@@ -56,7 +62,7 @@ public interface ActionInvocation extends Serializable {
     ActionContext getInvocationContext();
 
     /**
-     * Get the ActionProxy holding this ActionInvocation.
+     * 返回持有本ActionInvocation的ActionProxy
      *
      * @return the ActionProxy.
      */
@@ -108,7 +114,7 @@ public interface ActionInvocation extends Serializable {
     void setResultCode(String resultCode);
 
     /**
-     * Gets the ValueStack associated with this ActionInvocation.
+     * 获取与这个ActionInvocation绑定的ValueStack
      *
      * @return the ValueStack
      */

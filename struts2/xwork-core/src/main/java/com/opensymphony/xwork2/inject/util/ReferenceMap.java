@@ -47,6 +47,10 @@ import java.util.concurrent.ConcurrentMap;
  * @author crazybob@google.com (Bob Lee)
  */
 @SuppressWarnings("unchecked")
+
+// 如果构建的是一个 JDK ReferenceMap, 
+// 可以指定使用什么类型的reference来保存key和value
+// 如果不是强引用, 那么如果key或者value不可到达或者JVM内存低的时候，垃圾回收器会将Map的这个entry删除
 public class ReferenceMap<K, V> implements Map<K, V>, Serializable {
 
   private static final long serialVersionUID = 0;

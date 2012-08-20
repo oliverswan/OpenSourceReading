@@ -19,10 +19,9 @@ import java.util.Map;
 
 
 /**
- * The {@link ActionProxyFactory} is used to create {@link ActionProxy}s to be executed.
- * <p/>
- * It is the entry point to XWork that is used by a dispatcher to create an {@link ActionProxy} to execute
- * for a particular namespace and action name.
+ * 用来创建被执行的ActionProxy
+ * 
+ * XWork的入口，XWork被dispatcher用来创建ActionProxy
  *
  * @author Jason Carreira
  * @see DefaultActionProxyFactory

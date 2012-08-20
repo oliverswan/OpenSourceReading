@@ -19,7 +19,7 @@ package com.opensymphony.xwork2.inject;
 import java.lang.reflect.Member;
 
 /**
- * Context of the current injection.
+ * 当前注入的上下文
  *
  * @author crazybob@google.com (Bob Lee)
  */

@@ -20,8 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Internal context. Used to coordinate injections and support circular
- * dependencies.
+ * 用来指导注入并支持循环依赖的内部上下文
  *
  * @author crazybob@google.com (Bob Lee)
  */

@@ -19,10 +19,9 @@ package com.opensymphony.xwork2.inject.util;
 import java.lang.ref.SoftReference;
 
 /**
- * Soft reference with a {@link com.opensymphony.xwork2.inject.util.FinalizableReference#finalizeReferent() finalizeReferent()} method which a background
- * thread invokes after the garbage collector reclaims the referent. This is a
- * simpler alternative to using a {@link java.lang.ref.ReferenceQueue}.
- *
+ * 本类继承SoftReference，并实现FinalizableReference
+ * 是ReferenceQueue另外一种更简单的替换
+ * 
  * @author crazybob@google.com (Bob Lee)
  */
 public abstract class FinalizableSoftReference<T> extends SoftReference<T>

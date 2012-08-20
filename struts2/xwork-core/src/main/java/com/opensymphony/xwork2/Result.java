@@ -19,24 +19,31 @@ import java.io.Serializable;
 
 
 /**
- * All results (except for <code>Action.NONE</code>) of an {@link Action} are mapped to a View implementation.
- * <p/>
- * Examples of Views might be:
+ * Action的所有执行结果都被映射到一个View实现
+ * 
+ * View的例子有:
+ * 
  * <ul>
  * <li>SwingPanelView - pops up a new Swing panel</li>
- * <li>ActionChainView - executes another action</li>
- * <li>SerlvetRedirectView - redirects the HTTP response to a URL</li>
- * <li>ServletDispatcherView - dispatches the HTTP response to a URL</li>
+ * <li>ActionChainView - 执行另外一个Action</li>
+ * <li>SerlvetRedirectView - 将http response redirect到另外一个url</li>
+ * <li>ServletDispatcherView -  将http response dispatch到另外一个url</li>
  * </ul>
  *
  * @author plightbo
  */
+// redirect: 通过在HTTP头把一个302的HTTP返回码和新的位置一并发送至浏览器，然后浏览器将自动发出一个指向这个新位置的HTTP请求
+// dispatch: 它发出一个内部的对资源的请求，只通过一个请求为浏览器生成最终的视图。 
 public interface Result extends Serializable {
 
     /**
-     * Represents a generic interface for all action execution results.
-     * Whether that be displaying a webpage, generating an email, sending a JMS message, etc.
-     *
+     * 描述了一个action执行结果的通用接口
+     * action的执行结果可能是  
+     * 
+     * 显示网页
+     * 生成email
+     * 发出JMS
+     * 
      * @param invocation  the invocation context.
      * @throws Exception can be thrown.
      */

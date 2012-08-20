@@ -59,13 +59,13 @@ public class DefaultActionInvocation implements ActionInvocation {
     private static final Class[] EMPTY_CLASS_ARRAY   = new Class[0];
     private static final Object[] EMPTY_OBJECT_ARRAY = new Object[0];
 
-    protected Object action;
-    protected ActionProxy proxy;
+    protected Object action;// Action实例
+    protected ActionProxy proxy; // ActionProxy实例
     protected List<PreResultListener> preResultListeners;
     protected Map<String, Object> extraContext;
-    protected ActionContext invocationContext;
+    protected ActionContext invocationContext;// ActionContext
     protected Iterator<InterceptorMapping> interceptors;
-    protected ValueStack stack;
+    protected ValueStack stack;// ValueStack
     protected Result result;
     protected Result explicitResult;
     protected String resultCode;
@@ -206,6 +206,7 @@ public class DefaultActionInvocation implements ActionInvocation {
         ResultConfig resultConfig = null;
 
         try {
+        	// 根据代码获取ResultConfig
             resultConfig = results.get(resultCode);
         } catch (NullPointerException e) {
             // swallow
@@ -218,6 +219,7 @@ public class DefaultActionInvocation implements ActionInvocation {
 
         if (resultConfig != null) {
             try {
+            	// 创建Result
                 return objectFactory.buildResult(resultConfig, invocationContext.getContextMap());
             } catch (Exception e) {
                 LOG.error("There was an exception while instantiating the result of type " + resultConfig.getClassName(), e);
@@ -236,18 +238,19 @@ public class DefaultActionInvocation implements ActionInvocation {
         String profileKey = "invoke: ";
         try {
             UtilTimerStack.push(profileKey);
-
+            // 已经执行的标志
             if (executed) {
                 throw new IllegalStateException("Action has already executed");
             }
-
+            
             if (interceptors.hasNext()) {
                 final InterceptorMapping interceptor = (InterceptorMapping) interceptors.next();
                 String interceptorMsg = "interceptor: " + interceptor.getName();
                 UtilTimerStack.push(interceptorMsg);
                 try {
-                                resultCode = interceptor.getInterceptor().intercept(DefaultActionInvocation.this);
-                            }
+                   // 拦截器执行
+                   resultCode = interceptor.getInterceptor().intercept(DefaultActionInvocation.this);
+                }
                 finally {
                     UtilTimerStack.pop(interceptorMsg);
                 }
@@ -255,10 +258,13 @@ public class DefaultActionInvocation implements ActionInvocation {
                 resultCode = invokeActionOnly();
             }
 
-            // this is needed because the result will be executed, then control will return to the Interceptor, which will
+            // this is needed because the result will be executed, 
+            // then control will return to the Interceptor, which will
             // return above and flow through again
+            // 如果还没有执行完的话，则没次回来都要调用所有的监听器
             if (!executed) {
                 if (preResultListeners != null) {
+                	// 调用所有的preResult监听器
                     for (Object preResultListener : preResultListeners) {
                         PreResultListener listener = (PreResultListener) preResultListener;
 
@@ -273,11 +279,11 @@ public class DefaultActionInvocation implements ActionInvocation {
                     }
                 }
 
-                // now execute the result, if we're supposed to
+                // 如果需要的话，则executeResult
                 if (proxy.getExecuteResult()) {
                     executeResult();
                 }
-
+                // 
                 executed = true;
             }
 
@@ -291,7 +297,8 @@ public class DefaultActionInvocation implements ActionInvocation {
     public String invokeActionOnly() throws Exception {
         return invokeAction(getAction(), proxy.getConfig());
     }
-
+    
+    // 创建Action的大部分信息都从proxy获取
     protected void createAction(Map<String, Object> contextMap) {
         // load action
         String timerKey = "actionCreate: " + proxy.getActionName();
@@ -320,40 +327,41 @@ public class DefaultActionInvocation implements ActionInvocation {
         } finally {
             UtilTimerStack.pop(timerKey);
         }
-
+        
+        // 通知监听器创建事件
         if (actionEventListener != null) {
             action = actionEventListener.prepare(action, stack);
         }
     }
-
+   
     protected Map<String, Object> createContextMap() {
         Map<String, Object> contextMap;
 
         if ((extraContext != null) && (extraContext.containsKey(ActionContext.VALUE_STACK))) {
-            // In case the ValueStack was passed in
+            // 如果传入了ValueStack
             stack = (ValueStack) extraContext.get(ActionContext.VALUE_STACK);
-
+            // 强制要求ValueStack
             if (stack == null) {
                 throw new IllegalStateException("There was a null Stack set into the extra params.");
             }
-
+            // 获取stack的Context
             contextMap = stack.getContext();
         } else {
-            // create the value stack
-            // this also adds the ValueStack to its context
+            // 如果没有传入额外的Context，则创建ValueStack，并添加到context
             stack = valueStackFactory.createValueStack();
 
-            // create the action context
+            // 从stack中获取Action的Context
             contextMap = stack.getContext();
         }
 
-        // put extraContext in
+        // 将额外context整合
         if (extraContext != null) {
             contextMap.putAll(extraContext);
         }
 
-        //put this DefaultActionInvocation into the context map
+        // 将本DefaultActionInvocation实例放入context
         contextMap.put(ActionContext.ACTION_INVOCATION, this);
+        // 将DI容器放入context
         contextMap.put(ActionContext.CONTAINER, container);
 
         return contextMap;
@@ -365,12 +373,14 @@ public class DefaultActionInvocation implements ActionInvocation {
      * @throws ConfigurationException If not result can be found with the returned code
      */
     private void executeResult() throws Exception {
+    	// 最终都要对Result进行处理
         result = createResult();
 
         String timerKey = "executeResult: " + getResultCode();
         try {
             UtilTimerStack.push(timerKey);
             if (result != null) {
+            	// 调用Result的execute方法
                 result.execute(this);
             } else if (resultCode != null && !Action.NONE.equals(resultCode)) {
                 throw new ConfigurationException("No result defined for action " + getAction().getClass().getName()
@@ -384,9 +394,10 @@ public class DefaultActionInvocation implements ActionInvocation {
             UtilTimerStack.pop(timerKey);
         }
     }
-
+    // 在初始化时被DefaultActionProxy调用
     public void init(ActionProxy proxy) {
         this.proxy = proxy;
+        // 初始化 valestack,context，并返回Action的Context
         Map<String, Object> contextMap = createContextMap();
 
         // Setting this so that other classes, like object factories, can use the ActionProxy and other
@@ -396,24 +407,29 @@ public class DefaultActionInvocation implements ActionInvocation {
         if (actionContext != null) {
             actionContext.setActionInvocation(this);
         }
-
+        
+        // 创建Action
         createAction(contextMap);
 
         if (pushAction) {
             stack.push(action);
             contextMap.put("action", action);
         }
-
+        
+        // 新建ActionContext
         invocationContext = new ActionContext(contextMap);
         invocationContext.setName(proxy.getActionName());
 
-        // get a new List so we don't get problems with the iterator if someone changes the list
+        // 创建一个新的List，这样其他人修改iterator的时候不会受影响
         List<InterceptorMapping> interceptorList = new ArrayList<InterceptorMapping>(proxy.getConfig().getInterceptors());
+        
+        // 获取拦截器的iterator
         interceptors = interceptorList.iterator();
     }
 
     protected String invokeAction(Object action, ActionConfig actionConfig) throws Exception {
-        String methodName = proxy.getMethod();
+        // 获取要执行的方法名字
+    	String methodName = proxy.getMethod();
 
         if (LOG.isDebugEnabled()) {
             LOG.debug("Executing action method = " + actionConfig.getMethodName());
@@ -427,6 +443,7 @@ public class DefaultActionInvocation implements ActionInvocation {
             Object methodResult = null;
             Method method = null;
             try {
+            	// 反射获取Action的方法
                 method = getAction().getClass().getMethod(methodName, EMPTY_CLASS_ARRAY);
             } catch (NoSuchMethodException e) {
                 // hmm -- OK, try doXxx instead
@@ -449,10 +466,12 @@ public class DefaultActionInvocation implements ActionInvocation {
                 }
             }
 
+            // 调用方法
             if (!methodCalled) {
                 methodResult = method.invoke(action, EMPTY_OBJECT_ARRAY);
             }
-
+            
+            // 保存并返回调用结果
             return saveResult(actionConfig, methodResult);
         } catch (NoSuchMethodException e) {
             throw new IllegalArgumentException("The " + methodName + "() is not defined in action " + getAction().getClass() + "");
@@ -477,19 +496,24 @@ public class DefaultActionInvocation implements ActionInvocation {
     }
 
     /**
-     * Save the result to be used later.
+     * 保存结果，以便后面使用
+     * 
      * @param actionConfig
      * @param methodResult the result of the action.
      * @return the result code to process.
      */
     protected String saveResult(ActionConfig actionConfig, Object methodResult) {
-        if (methodResult instanceof Result) {
+        // 对象类型的result
+    	if (methodResult instanceof Result) {
+    		// 保存到了成员变量
             this.explicitResult = (Result) methodResult;
 
             // Wire the result automatically
             container.inject(explicitResult);
             return null;
-        } else {
+        } 
+    	// 字符串类型的result
+    	else {
             return (String) methodResult;
         }
     }

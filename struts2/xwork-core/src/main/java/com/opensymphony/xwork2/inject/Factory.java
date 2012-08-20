@@ -17,7 +17,7 @@
 package com.opensymphony.xwork2.inject;
 
 /**
- * A custom factory. Creates objects which will be injected.
+ * 创建被注入过的对象
  *
  * @author crazybob@google.com (Bob Lee)
  */

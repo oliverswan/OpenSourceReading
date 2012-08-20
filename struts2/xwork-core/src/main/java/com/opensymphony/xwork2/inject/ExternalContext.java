@@ -20,8 +20,8 @@ import java.lang.reflect.Member;
 import java.util.LinkedHashMap;
 
 /**
- * An immutable snapshot of the current context which is safe to
- * expose to client code.
+ * 当前context的不可改变镜像。
+ * 可以安全第暴露给客户
  *
  * @author crazybob@google.com (Bob Lee)
  */
