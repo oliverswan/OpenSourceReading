@@ -24,7 +24,11 @@ import com.opensymphony.xwork2.Action;
 
 /**
  * <!-- START SNIPPET: description -->
- * Marks a action method that if it's not validated by ValidationInterceptor then execute input method or input result.
+ * 
+ * Marks a action method that if it's not validated by 
+ * ValidationInterceptor 
+ * then execute input method or input result.
+ * 
  * <!-- END SNIPPET: description -->
  *
  * <p/> <u>Annotation usage:</u>

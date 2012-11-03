@@ -127,7 +127,9 @@ public class PrepareOperations {
     }
 
     /**
-     * Wraps the request with the Struts wrapper that handles multipart requests better
+     * Wraps the request with the Struts wrapper that handles 
+     * multipart requests better
+     * 
      * @return The new request, if there is one
      * @throws ServletException
      */
@@ -164,7 +166,7 @@ public class PrepareOperations {
         ActionMapping mapping = (ActionMapping) request.getAttribute(STRUTS_ACTION_MAPPING_KEY);
         if (mapping == null || forceLookup) {
             try {
-            	// 从依赖注入的ActionMapper实例中获取ActionMapping
+            	// 从DI的ActionMapper实例中获取ActionMapping
                 mapping = dispatcher.getContainer().getInstance(ActionMapper.class).getMapping(request, dispatcher.getConfigurationManager());
                 if (mapping != null) {
                     request.setAttribute(STRUTS_ACTION_MAPPING_KEY, mapping);

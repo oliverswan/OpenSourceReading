@@ -21,8 +21,10 @@ import com.opensymphony.xwork2.ValidationAware;
 
 
 /**
- * The context for validation. This interface extends others to provide methods for reporting
- * errors and messages as well as looking up error messages in a resource bundle using a specific locale.
+ * The context for validation. 
+ * This interface extends others to provide methods for reporting
+ * errors and messages 
+ * as well as looking up error messages in a resource bundle using a specific locale.
  *
  * @author Jason Carreira
  */

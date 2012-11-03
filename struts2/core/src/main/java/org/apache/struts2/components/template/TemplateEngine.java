@@ -24,8 +24,7 @@ package org.apache.struts2.components.template;
 import java.util.Map;
 
 /**
- * Any template language which wants to support UI tag templating needs to provide an implementation of this interface
- * to handle rendering the template
+ * 任何模板语言要支持UI标签模板需要提供这个接口的实现，来处理展现模板
  */
 public interface TemplateEngine {
 

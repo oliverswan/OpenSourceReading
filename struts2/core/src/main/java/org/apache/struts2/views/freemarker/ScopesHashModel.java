@@ -43,6 +43,10 @@ import java.util.Map;
  *
  * Updated to subclass AllHttpScopesHashModel.java to incorporate invisible scopes and compatibility with freemarker.
  */
+// 你可以使用诸如java collections 对象作为你的数据模型，这是因为这些数据模型通常会被（FreeMarker）
+// 在内部转换成TemplateModel 类型的对象。这种功能呢就叫做object wrapping。它可
+// 以透明地把任意对象转化成TemplateModel 接口类型的实例
+// 你在转换这些对象的时候，必须选取适合的包裹类
 public class ScopesHashModel extends SimpleHash implements TemplateModel {
 
     private static final long serialVersionUID = 5551686380141886764L;

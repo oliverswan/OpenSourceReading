@@ -92,7 +92,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * all requests.
  *
  * @see org.apache.struts2.dispatcher.FilterDispatcher
- *///该实例被所有请求共享
+ */
 public class Dispatcher {
 
     /**
@@ -142,7 +142,7 @@ public class Dispatcher {
     private String multipartHandlerName;
 
     /**
-     * Provide list of default configuration files.
+     * 默认配置文件列表
      */
     private static final String DEFAULT_CONFIGURATION_PATHS = "struts-default.xml,struts-plugin.xml,struts.xml";
 
@@ -341,12 +341,16 @@ public class Dispatcher {
     }
 
     private void init_TraditionalXmlConfigurations() {
+    	// 从web.xml中的config读取配置路径
         String configPaths = initParams.get("config");
+        // "struts-default.xml,struts-plugin.xml,struts.xml"
         if (configPaths == null) {
             configPaths = DEFAULT_CONFIGURATION_PATHS;
         }
+        // 使用,分隔
         String[] files = configPaths.split("\\s*[,]\\s*");
         for (String file : files) {
+        	// 除了xwork.xml其他的都是struts.xml
             if (file.endsWith(".xml")) {
                 if ("xwork.xml".equals(file)) {
                     configurationManager.addContainerProvider(createXmlConfigurationProvider(file, false));
@@ -521,11 +525,14 @@ public class Dispatcher {
 
             request.setAttribute(ServletActionContext.STRUTS_VALUESTACK_KEY, proxy.getInvocation().getStack());
 
-            // if the ActionMapping says to go straight to a result, do it!
+            // if the ActionMapping says to go straight 
+            // to a result, do it!
             if (mapping.getResult() != null) {
                 Result result = mapping.getResult();
+                // 跳过Action
                 result.execute(proxy.getInvocation());
             } else {
+            	// 执行Action
                 proxy.execute();
             }
 
@@ -570,7 +577,8 @@ public class Dispatcher {
         // request map wrapping the http request objects
         Map requestMap = new RequestMap(request);
 
-        // parameters map wrapping the http parameters.  ActionMapping parameters are now handled and applied separately
+        // parameters map wrapping the http parameters.  
+        // ActionMapping parameters are now handled and applied separately
         Map params = new HashMap(request.getParameterMap());
 
         // session map wrapping the http session

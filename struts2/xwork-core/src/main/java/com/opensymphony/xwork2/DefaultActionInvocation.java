@@ -71,6 +71,7 @@ public class DefaultActionInvocation implements ActionInvocation {
     protected String resultCode;
     protected boolean executed = false;
     protected boolean pushAction = true;
+    // 用来创建相关实例
     protected ObjectFactory objectFactory;
     protected ActionEventListener actionEventListener;
     protected ValueStackFactory valueStackFactory;

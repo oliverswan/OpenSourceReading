@@ -89,10 +89,11 @@ public class DefaultConfiguration implements Configuration {
 
 
     // Programmatic Action Configurations
+    // 持有所有的PackageConfig
     protected Map<String, PackageConfig> packageContexts = new LinkedHashMap<String, PackageConfig>();
     protected RuntimeConfiguration runtimeConfiguration;
     protected Container container;
-    protected String defaultFrameworkBeanName;
+    protected String defaultFrameworkBeanName;// xwork
     protected Set<String> loadedFileNames = new TreeSet<String>();
     protected List<UnknownHandlerConfig> unknownHandlerStack;
 
@@ -195,11 +196,13 @@ public class DefaultConfiguration implements Configuration {
     }
 
     /**
-     * Calls the ConfigurationProviderFactory.getConfig() to tell it to reload the configuration and then calls
-     * buildRuntimeConfiguration().
+     * Calls the ConfigurationProviderFactory.getConfig() to tell 
+     * it to reload the configuration
+     * 然后调用buildRuntimeConfiguration().
      *
      * @throws ConfigurationException
      */
+    // 传入containerProvider返回PackageProvider
     public synchronized List<PackageProvider> reloadContainer(List<ContainerProvider> providers) throws ConfigurationException {
         packageContexts.clear();
         loadedFileNames.clear();
@@ -207,11 +210,15 @@ public class DefaultConfiguration implements Configuration {
 
         ContainerProperties props = new ContainerProperties();
         ContainerBuilder builder = new ContainerBuilder();
+       
         Container bootstrap = createBootstrapContainer(providers);
+        // 遍历所有的containerProvider
         for (final ContainerProvider containerProvider : providers)
         {
+        	// 将containerProvider注入
             bootstrap.inject(containerProvider);
             containerProvider.init(this);
+            // 注册
             containerProvider.register(builder, props);
         }
         props.setConstants(builder);
@@ -227,6 +234,7 @@ public class DefaultConfiguration implements Configuration {
             // Set the bootstrap container for the purposes of factory creation
 
             setContext(bootstrap);
+            // 创建Container
             container = builder.create(false);
             setContext(container);
             objectFactory = container.getInstance(ObjectFactory.class);
@@ -309,7 +317,9 @@ public class DefaultConfiguration implements Configuration {
 
     /**
      * This builds the internal runtime configuration used by Xwork for finding and configuring Actions from the
-     * programmatic configuration data structures. All of the old runtime configuration will be discarded and rebuilt.
+     * programmatic configuration data structures. 
+     * 
+     * All of the old runtime configuration will be discarded and rebuilt.
      *
      * <p>
      * It basically flattens the data structures to make the information easier to access.  It will take

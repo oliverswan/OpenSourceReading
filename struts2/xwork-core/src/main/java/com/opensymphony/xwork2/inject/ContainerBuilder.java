@@ -21,22 +21,24 @@ import java.util.*;
 import java.util.logging.Logger;
 
 /**
- * Builds a dependency injection {@link Container}. The combination of
- * dependency type and name uniquely identifies a dependency mapping; you can
- * use the same name for two different types. Not safe for concurrent use.
+ * 用来创建依赖注入的Container
+ * 
+ * 依赖type和name唯一地确定一个依赖映射，可以为不同的类型使用相同的名字。
+ * 
+ * 线程不安全
  *
- * <p>Adds the following factories by default:
+ * <p>默认添加下面的工厂:
  *
  * <ul>
- *   <li>Injects the current {@link Container}.
- *   <li>Injects the {@link Logger} for the injected member's declaring class.
+ *   <li>注入当前Container
+ *   <li>将Logger注入到声明类的被注入成员
  * </ul>
  *
  * @author crazybob@google.com (Bob Lee)
  */
 public final class ContainerBuilder {
 
-  // 保存所有创建被注入实例的工厂
+  // 保存所有创建被注入实例的工厂，每一种被注入的类型有一个InternalFactory
   final Map<Key<?>, InternalFactory<?>> factories =
       new HashMap<Key<?>, InternalFactory<?>>();
   
@@ -48,7 +50,8 @@ public final class ContainerBuilder {
   
   boolean created;
   boolean allowDuplicates = false;
-
+  
+  // Container类型的工厂
   private static final InternalFactory<Container> CONTAINER_FACTORY =
       new InternalFactory<Container>() {
         public Container create(InternalContext context) {
@@ -66,7 +69,7 @@ public final class ContainerBuilder {
       };
 
   /**
-   * Constructs a new builder.
+   * 构建新的ContainerBuilder，默认添加Container,Log类型对应的InternalFactory
    */
   public ContainerBuilder() {
     // In the current container as the default Container implementation.
@@ -79,12 +82,13 @@ public final class ContainerBuilder {
   }
 
   /**
-   * Maps a dependency. All methods in this class ultimately funnel through
-   * here.
-   * 映射一个依赖，本类所有的方法都漏斗式地通过这里
+   * 映射一个依赖，就是将一种Class的类型，和对应的InternalFactory保存到缓存中
+   * 
+   * 本类所有的方法都漏斗式地通过这里，意思就是最终通过调用这个方法来结束调用
    */
   private <T> ContainerBuilder factory(final Key<T> key,
       InternalFactory<? extends T> factory, Scope scope) {
+	  
     ensureNotCreated();
     checkKey(key);
     
@@ -95,6 +99,7 @@ public final class ContainerBuilder {
     // 保存这个工程
     factories.put(key, scopedFactory);
     if (scope == Scope.SINGLETON) {
+    	// 如果是单例的话就保存到单例工厂缓存
       singletonFactories.add(new InternalFactory<T>() {
         public T create(InternalContext context) {
           try {
@@ -131,12 +136,15 @@ public final class ContainerBuilder {
    */
   public <T> ContainerBuilder factory(final Class<T> type, final String name,
       final Factory<? extends T> factory, Scope scope) {
-    InternalFactory<T> internalFactory =
-        new InternalFactory<T>() {
+	
+	// 新建一个InternalFactory
+    InternalFactory<T> internalFactory =  new InternalFactory<T>() {
 
       public T create(InternalContext context) {
         try {
+          
           Context externalContext = context.getExternalContext();
+          // 传入externalContext
           return factory.create(externalContext);
         } catch (Exception e) {
           throw new RuntimeException(e);
@@ -153,6 +161,7 @@ public final class ContainerBuilder {
       }
     };
 
+    // 调用内部方法
     return factory(Key.newInstance(type, name), internalFactory, scope);
   }
 
@@ -489,11 +498,14 @@ public final class ContainerBuilder {
    * @throws IllegalStateException if called more than once
    */
   public Container create(boolean loadSingletons) {
-    ensureNotCreated();
+    // 一个builder实例只能创建一个Container实例
+	ensureNotCreated();
     created = true;
+    
     final ContainerImpl container = new ContainerImpl(
         new HashMap<Key<?>, InternalFactory<?>>(factories));
     if (loadSingletons) {
+      // 在Container自己的线程本地Context中调用
       container.callInContext(new ContainerImpl.ContextualCallable<Void>() {
         public Void call(InternalContext context) {
           for (InternalFactory<?> factory : singletonFactories) {

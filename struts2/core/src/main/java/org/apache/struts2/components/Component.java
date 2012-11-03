@@ -45,7 +45,8 @@ import java.util.Stack;
 /**
  * Base class to extend for UI components.
  * <p/>
- * This class is a good extension point when building reuseable UI components.
+ * This class is a good extension point when 
+ * building reuseable UI components.
  *
  */
 public class Component {

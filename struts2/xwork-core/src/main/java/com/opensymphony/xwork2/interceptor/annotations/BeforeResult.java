@@ -22,7 +22,9 @@ import java.lang.annotation.Target;
 
 /**
  * <!-- START SNIPPET: description -->
- * Marks a action method that needs to be executed before the result. Return value is ignored.
+ * Marks a action method that needs to be executed 
+ * before the result. Return value is ignored.
+ * 
  * <!-- END SNIPPET: description -->
  *
  * <p/> <u>Annotation usage:</u>

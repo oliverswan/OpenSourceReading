@@ -46,9 +46,12 @@ public class StrutsPrepareAndExecuteFilter implements StrutsStatics, Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
         InitOperations init = new InitOperations();
         try {
-            FilterHostConfig config = new FilterHostConfig(filterConfig);
+            
+        	FilterHostConfig config = new FilterHostConfig(filterConfig);
             init.initLogging(config);
+            
             Dispatcher dispatcher = init.initDispatcher(config);
+            
             init.initStaticContentLoader(config, dispatcher);
 
             prepare = new PrepareOperations(filterConfig.getServletContext(), dispatcher);
@@ -74,6 +77,7 @@ public class StrutsPrepareAndExecuteFilter implements StrutsStatics, Filter {
         HttpServletResponse response = (HttpServletResponse) res;
 
         try {
+        	// 设置编码
             prepare.setEncodingAndLocale(request, response);
             // 创建ActionContext
             prepare.createActionContext(request, response);
@@ -84,6 +88,7 @@ public class StrutsPrepareAndExecuteFilter implements StrutsStatics, Filter {
 			} else {
 				// 包装request,让从request取值的时候也从 valuestack取
 				request = prepare.wrapRequest(request);
+				// 查找ActionMapping
 				ActionMapping mapping = prepare.findActionMapping(request, response, true);
 				if (mapping == null) {
 					boolean handled = execute.executeStaticResourceRequest(request, response);
@@ -91,6 +96,7 @@ public class StrutsPrepareAndExecuteFilter implements StrutsStatics, Filter {
 						chain.doFilter(request, response);
 					}
 				} else {
+					// 让execute执行这个ActionMapping
 					execute.executeAction(request, response, mapping);
 				}
 			}

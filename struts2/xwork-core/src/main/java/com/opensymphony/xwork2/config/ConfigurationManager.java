@@ -41,10 +41,14 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ConfigurationManager {
 
     protected static final Logger LOG = LoggerFactory.getLogger(ConfigurationManager.class);
+    // 用来加载
     protected Configuration configuration;
     protected Lock providerLock = new ReentrantLock();
+    // struts2的Dispatcher给ConfigurationManager添加了很多ContainerProvider
     private List<ContainerProvider> containerProviders = new CopyOnWriteArrayList<ContainerProvider>();
+    // 使用传入的ContainerProviders来重新加载packageProviders
     private List<PackageProvider> packageProviders = new CopyOnWriteArrayList<PackageProvider>();
+    // 默认是struts
     protected String defaultFrameworkBeanName;
     private boolean providersChanged = false;
 
@@ -57,7 +61,7 @@ public class ConfigurationManager {
     }
 
     /**
-     * Get the current XWork configuration object.  By default an instance of DefaultConfiguration will be returned
+     * 默认是创建DefaultConfiguration
      *
      * @see com.opensymphony.xwork2.config.impl.DefaultConfiguration
      */
@@ -65,6 +69,7 @@ public class ConfigurationManager {
         if (configuration == null) {
             setConfiguration(createConfiguration(defaultFrameworkBeanName));
             try {
+            	// 根据containerProvider加载Configuration
                 configuration.reloadContainer(getContainerProviders());
             } catch (ConfigurationException e) {
                 setConfiguration(null);
@@ -217,6 +222,7 @@ public class ConfigurationManager {
     }
 
     private void reloadProviders(List<ContainerProvider> providers) {
+    	// 销毁所有之前的containerProvider
         for (ContainerProvider containerProvider : containerProviders) {
             try {
                 containerProvider.destroy();
@@ -226,6 +232,7 @@ public class ConfigurationManager {
                 }
             }
         }
+        // 使用传入的ContainerProviders来重新加载packageProviders
         packageProviders = this.configuration.reloadContainer(providers);
     }
 

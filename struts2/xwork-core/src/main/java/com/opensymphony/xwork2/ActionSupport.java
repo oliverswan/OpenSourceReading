@@ -296,6 +296,7 @@ public class ActionSupport implements Action, Validateable, ValidationAware, Tex
             if (container != null) {
                 container.inject(tpf);
             }
+            // 创建这个Action实例绑定的textProvider
             textProvider = tpf.createInstance(getClass(), this);
         }
         return textProvider;

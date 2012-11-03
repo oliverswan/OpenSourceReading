@@ -51,8 +51,12 @@ import org.springframework.web.context.WebApplicationContext;
  * <!-- END SNIPPET: example -->
  * </pre>
  * 
+ * 自动为Action组装它所需的Spring容器中的Bean，也就是不用在每个Action中逐个配置所需的Bean
+ * 
  * Autowires action classes to Spring beans.  The strategy for autowiring the beans can be configured
- * by setting the parameter on the interceptor.  Actions that need access to the <code>ActionContext</code>
+ * by setting the parameter on the interceptor.  
+ * 
+ * Actions that need access to the <code>ActionContext</code>
  * can implements the <code>ApplicationContextAware</code> interface.  The context will also be placed on
  * the action context under the APPLICATION_CONTEXT attribute.
  *

@@ -30,11 +30,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p> Matches patterns against pre-compiled wildcard expressions pulled from
- * target objects. It uses the wildcard matcher from the Apache Cocoon
- * project. Patterns will be matched in the order they were added. The first 
- * match wins, so more specific patterns should be defined before less specific 
- * patterns.
+ * <p> 
+ * 
+ * 针对从目标对象拉取的预编译wildcard表达式的匹配模式
+ * 
+ * 使用来自Apache Cocoon项目的wildcard matcher
+ *  
+ * Pattern会按照他们添加的顺序进行匹配,第一个匹配到的胜出, 所以具体的模式要在通用模式之前定义
  * 
  * @since 2.1
  */
@@ -72,8 +74,8 @@ public abstract class AbstractMatcher<E> implements Serializable {
      * goal is to support the legacy "*!*" syntax, where the "!*" is optional.
      * </p>
      * 
-     * @param name The pattern
-     * @param target The object to associate with the pattern
+     * @param name 指定的Pattern
+     * @param target 与这个模式绑定的对象
      * @param looseMatch
      *            To loosely match wildcards or not
      */

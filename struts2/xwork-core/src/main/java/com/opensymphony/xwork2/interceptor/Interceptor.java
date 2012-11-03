@@ -23,24 +23,28 @@ import java.io.Serializable;
 /**
  * <!-- START SNIPPET: introduction -->
  * <p/>
- * An interceptor is a stateless class that follows the interceptor pattern, as
- * found in {@link  javax.servlet.Filter} and in AOP languages.
+ * 
+ * 是一个无状态的类，依据拦截器模式，比如Filter,AOP
+ * 
+ * <p/>
+ * Interceptors 是动态拦截Action调用的对象
+ * 
+ * 可以让开发者定义在execute方法前后执行的代码。
+ * 也可以阻止execute方法的执行。
+ * 
+ * 用来封装一些应用到多个action的代码
+ * 
  * <p/>
  * <p/>
  * <p/>
- * Interceptors are objects that dynamically intercept Action invocations.
- * They provide the developer with the opportunity to define code that can be executed
- * before and/or after the execution of an action. They also have the ability
- * to prevent an action from executing. Interceptors provide developers a way to
- * encapulate common functionality in a re-usable form that can be applied to
- * one or more Actions.
- * <p/>
- * <p/>
- * <p/>
- * Interceptors <b>must</b> be stateless and not assume that a new instance will be created for each request or Action.
- * Interceptors may choose to either short-circuit the {@link ActionInvocation} execution and return a return code
- * (such as {@link com.opensymphony.xwork2.Action#SUCCESS}), or it may choose to do some processing before
- * and/or after delegating the rest of the procesing using {@link ActionInvocation#invoke()}.
+ * Interceptors 必须是无状态的
+ * 不能为每次请求和action创建新的实例
+ * 
+ * Interceptors 可以选择
+ * short-circuit ActionInvocation的执行
+ * 或者返回一个代码，比如SUCCESS
+ * 或者它可以在委托执行invoke的前后执行一些代码
+ * 
  * <p/>
  * <!-- END SNIPPET: introduction -->
  * <p/>
@@ -48,60 +52,57 @@ import java.io.Serializable;
  * <p/>
  * <!-- START SNIPPET: parameterOverriding -->
  * <p/>
- * Interceptor's parameter could be overriden through the following ways :-
+ * 拦截器的参数可以通过下面的方式定义:-
  * <p/>
  * <p/>
  * <p/>
  * <b>Method 1:</b>
  * <pre>
- * &lt;action name="myAction" class="myActionClass"&gt;
- *     &lt;interceptor-ref name="exception"/&gt;
- *     &lt;interceptor-ref name="alias"/&gt;
- *     &lt;interceptor-ref name="params"/&gt;
- *     &lt;interceptor-ref name="servletConfig"/&gt;
- *     &lt;interceptor-ref name="prepare"/&gt;
- *     &lt;interceptor-ref name="i18n"/&gt;
- *     &lt;interceptor-ref name="chain"/&gt;
- *     &lt;interceptor-ref name="modelDriven"/&gt;
- *     &lt;interceptor-ref name="fileUpload"/&gt;
- *     &lt;interceptor-ref name="staticParams"/&gt;
- *     &lt;interceptor-ref name="params"/&gt;
- *     &lt;interceptor-ref name="conversionError"/&gt;
- *     &lt;interceptor-ref name="validation"&gt;
- *     &lt;param name="excludeMethods"&gt;myValidationExcudeMethod&lt;/param&gt;
- *     &lt;/interceptor-ref&gt;
- *     &lt;interceptor-ref name="workflow"&gt;
- *     &lt;param name="excludeMethods"&gt;myWorkflowExcludeMethod&lt;/param&gt;
- *     &lt;/interceptor-ref&gt;
- * &lt;/action&gt;
+ * <action name="myAction" class="myActionClass">
+ * 	   <!-- 这里复制了整个default stack -->
+ *     <interceptor-ref name="exception"/>
+ *     <interceptor-ref name="alias"/>
+ *     <interceptor-ref name="params"/>
+ *     <interceptor-ref name="servletConfig"/>
+ *     <interceptor-ref name="prepare"/>
+ *     <interceptor-ref name="i18n"/>
+ *     <interceptor-ref name="chain"/>
+ *     <interceptor-ref name="modelDriven"/>
+ *     <interceptor-ref name="fileUpload"/>
+ *     <interceptor-ref name="staticParams"/>
+ *     <interceptor-ref name="params"/>
+ *     <interceptor-ref name="conversionError"/>
+ *     <interceptor-ref name="validation">
+ *     <param name="excludeMethods">myValidationExcudeMethod</param>
+ *     </interceptor-ref>
+ *     <interceptor-ref name="workflow">
+ *     <param name="excludeMethods">myWorkflowExcludeMethod</param>
+ *     </interceptor-ref>
+ * </action>
  * </pre>
  * <p/>
  * <b>Method 2:</b>
  * <pre>
- * &lt;action name="myAction" class="myActionClass"&gt;
- *   &lt;interceptor-ref name="defaultStack"&gt;
- *     &lt;param name="validation.excludeMethods"&gt;myValidationExcludeMethod&lt;/param&gt;
- *     &lt;param name="workflow.excludeMethods"&gt;myWorkflowExcludeMethod&lt;/param&gt;
- *   &lt;/interceptor-ref&gt;
- * &lt;/action&gt;
+ * <action name="myAction" class="myActionClass">
+ * 	<!-- 这里引用了现有的defaultstack -->
+ *   <interceptor-ref name="defaultStack">
+ *     <param name="validation.excludeMethods">myValidationExcludeMethod</param>
+ *     <param name="workflow.excludeMethods">myWorkflowExcludeMethod</param>
+ *   </interceptor-ref>
+ * </action>
  * </pre>
  * <p/>
  * <p/>
- * <p/>
- * In the first method, the whole default stack is copied and the parameter then
- * changed accordingly.
- * <p/>
- * <p/>
- * <p/>
  * In the second method, the 'interceptor-ref' refer to an existing
- * interceptor-stack, namely defaultStack in this example, and override the validator
+ * interceptor-stack, namely defaultStack in this example, 
+ * and override the validator
  * and workflow interceptor excludeMethods typically in this case. Note that in the
  * 'param' tag, the name attribute contains a dot (.) the word before the dot(.)
  * specifies the interceptor name whose parameter is to be overridden and the word after
  * the dot (.) specifies the parameter itself. Essetially it is as follows :-
  * <p/>
  * <pre>
- *    &lt;interceptor-name&gt;.&lt;parameter-name&gt;
+ *    <interceptor-name>.<parameter-name>
  * </pre>
  * <p/>
  * <b>Note</b> also that in this case the 'interceptor-ref' name attribute
@@ -118,25 +119,27 @@ import java.io.Serializable;
  * Interceptor stack parameter overriding could be nested into as many level as possible, though it would
  * be advisable not to nest it too deep as to avoid confusion, For example,
  * <pre>
- * &lt;interceptor name="interceptor1" class="foo.bar.Interceptor1" /&gt;
- * &lt;interceptor name="interceptor2" class="foo.bar.Interceptor2" /&gt;
- * &lt;interceptor name="interceptor3" class="foo.bar.Interceptor3" /&gt;
- * &lt;interceptor name="interceptor4" class="foo.bar.Interceptor4" /&gt;
- * &lt;interceptor-stack name="stack1"&gt;
- *     &lt;interceptor-ref name="interceptor1" /&gt;
- * &lt;/interceptor-stack&gt;
- * &lt;interceptor-stack name="stack2"&gt;
- *     &lt;interceptor-ref name="intercetor2" /&gt;
- *     &lt;interceptor-ref name="stack1" /&gt;
- * &lt;/interceptor-stack&gt;
- * &lt;interceptor-stack name="stack3"&gt;
- *     &lt;interceptor-ref name="interceptor3" /&gt;
- *     &lt;interceptor-ref name="stack2" /&gt;
- * &lt;/interceptor-stack&gt;
- * &lt;interceptor-stack name="stack4"&gt;
- *     &lt;interceptor-ref name="interceptor4" /&gt;
- *     &lt;interceptor-ref name="stack3" /&gt;
- *  &lt;/interceptor-stack&gt;
+ * <interceptor name="interceptor1" class="foo.bar.Interceptor1" />
+ * <interceptor name="interceptor2" class="foo.bar.Interceptor2" />
+ * <interceptor name="interceptor3" class="foo.bar.Interceptor3" />
+ * <interceptor name="interceptor4" class="foo.bar.Interceptor4" />
+ * 
+ * <interceptor-stack name="stack1">
+ *     <interceptor-ref name="interceptor1" />
+ * </interceptor-stack>
+ * 
+ * <interceptor-stack name="stack2">
+ *     <interceptor-ref name="intercetor2" />
+ *     <interceptor-ref name="stack1" />
+ * </interceptor-stack>
+ * <interceptor-stack name="stack3">
+ *     <interceptor-ref name="interceptor3" />
+ *     <interceptor-ref name="stack2" />
+ * </interceptor-stack>
+ * <interceptor-stack name="stack4">
+ *     <interceptor-ref name="interceptor4" />
+ *     <interceptor-ref name="stack3" />
+ *  </interceptor-stack>
  * </pre>
  * Assuming the interceptor has the following properties
  * <table border="1" width="100%">
@@ -163,21 +166,21 @@ import java.io.Serializable;
  * </table>
  * We could override them as follows :-
  * <pre>
- *    &lt;action ... &gt;
- *        &lt;!-- to override parameters of interceptor located directly in the stack  --&gt;
- *        &lt;interceptor-ref name="stack4"&gt;
- *           &lt;param name="interceptor4.param4"&gt; ... &lt;/param&gt;
- *        &lt;/interceptor-ref&gt;
- *    &lt;/action&gt;
+ *    <action ... >
+ *        <!-- to override parameters of interceptor located directly in the stack  -->
+ *        <interceptor-ref name="stack4">
+ *           <param name="interceptor4.param4"> ... </param>
+ *        </interceptor-ref>
+ *    </action>
  * <p/>
- *    &lt;action ... &gt;
- *        &lt;!-- to override parameters of interceptor located under nested stack --&gt;
- *        &lt;interceptor-ref name="stack4"&gt;
- *            &lt;param name="stack3.interceptor3.param3"&gt; ... &lt;/param&gt;
- *            &lt;param name="stack3.stack2.interceptor2.param2"&gt; ... &lt;/param&gt;
- *            &lt;param name="stack3.stack2.stack1.interceptor1.param1"&gt; ... &lt;/param&gt;
- *        &lt;/interceptor-ref&gt;
- *    &lt;/action&gt;
+ *    <action ... >
+ *        <!-- to override parameters of interceptor located under nested stack -->
+ *        <interceptor-ref name="stack4">
+ *            <param name="stack3.interceptor3.param3"> ... </param>
+ *            <param name="stack3.stack2.interceptor2.param2"> ... </param>
+ *            <param name="stack3.stack2.stack1.interceptor1.param1"> ... </param>
+ *        </interceptor-ref>
+ *    </action>
  *  </pre>
  * <p/>
  * <!-- END SNIPPET: nestedParameterOverriding -->
@@ -201,8 +204,14 @@ public interface Interceptor extends Serializable {
     void init();
 
     /**
-     * Allows the Interceptor to do some processing on the request before and/or after the rest of the processing of the
-     * request by the {@link ActionInvocation} or to short-circuit the processing and just return a String return code.
+     * 在这个方法里，对传入的ActionInvocation进行拦截。
+     * 
+     * Allows the Interceptor to do some processing on 
+     * the request before and/or after the rest of 
+     * the processing of the
+     * request by the {@link ActionInvocation} or 
+     * to short-circuit the processing and just 
+     * return a String return code.
      *
      * @param invocation the action invocation
      * @return the return code, either returned from {@link ActionInvocation#invoke()}, or from the interceptor itself.

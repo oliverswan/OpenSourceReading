@@ -1,7 +1,7 @@
 package com.opensymphony.xwork2.config.entities;
 
 /**
- * Defines an object that can be used to retrieve interceptor configuration
+ * 用来获取拦截器配置
  */
 public interface InterceptorLocator {
 

@@ -41,26 +41,28 @@ import java.util.Map;
 /**
  * <!-- START SNIPPET: description -->
  *
- * Includes or forwards to a view (usually a jsp). Behind the scenes Struts
- * will use a RequestDispatcher, where the target servlet/JSP receives the same
- * request/response objects as the original servlet/JSP. Therefore, you can pass
- * data between them using request.setAttribute() - the Struts action is
- * available.
+ * Includes 或 forwards 到view，通常是一个jsp. 
+ * 
+ * 底层会使用RequestDispatcher(jsp本质上也是servlet), 目标servlet
+ * 会收到与当前servlet相同的request,response对象
+ * 
+ * 因此可以使用request.setAttribute() - the Struts action is
+ * available.来传递参数
+ * 
  * <p/>
- * There are three possible ways the result can be executed:
+ * 
+ * 本result转向目标的方式有3种:
  *
  * <ul>
  *
- * <li>If we are in the scope of a JSP (a PageContext is available), PageContext's
- * {@link PageContext#include(String) include} method is called.</li>
+ * <li>如果在jsp的scope中(a PageContext is available), 
+ * PageContext.include方法会被调用
  *
- * <li>If there is no PageContext and we're not in any sort of include (there is no
- * "javax.servlet.include.servlet_path" in the request attributes), then a call to
- * {@link RequestDispatcher#forward(javax.servlet.ServletRequest, javax.servlet.ServletResponse) forward}
- * is made.</li>
+ * <li>如果没有 PageContext并且我们不是在任何类型的include 中(there is no
+ * "javax.servlet.include.servlet_path" in the request attributes), 
+ * 那么会调用RequestDispatcher.forward</li>
  *
- * <li>Otherwise, {@link RequestDispatcher#include(javax.servlet.ServletRequest, javax.servlet.ServletResponse) include}
- * is called.</li>
+ * <li>RequestDispatcher#include.</li>
  *
  * </ul>
  * <!-- END SNIPPET: description -->
@@ -82,9 +84,9 @@ import java.util.Map;
  * <b>Example:</b>
  *
  * <pre><!-- START SNIPPET: example -->
- * &lt;result name="success" type="dispatcher"&gt;
- *   &lt;param name="location"&gt;foo.jsp&lt;/param&gt;
- * &lt;/result&gt;
+ * <result name="success" type="dispatcher">
+ *   <param name="location">foo.jsp</param>
+ * </result>
  * <!-- END SNIPPET: example --></pre>
  *
  * This result follows the same rules from {@link StrutsResultSupport}.

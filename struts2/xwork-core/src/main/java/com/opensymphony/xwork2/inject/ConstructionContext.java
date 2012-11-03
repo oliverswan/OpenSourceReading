@@ -24,7 +24,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Context of a dependency construction. Used to manage circular references.
+ * Context of a dependency construction. 
+ * Used to manage circular references.
+ * 
+ * 用来管理循环依赖
  *
  * @author crazybob@google.com (Bob Lee)
  */
@@ -65,19 +68,21 @@ class ConstructionContext<T> {
     // the implementation type, I'll be able to get away with one proxy
     // instance (as opposed to one per caller).
 
+    // 如果期待的类型不是接口
     if (!expectedType.isInterface()) {
       throw new DependencyException(
           expectedType.getName() + " is not an interface.");
     }
-
+    
+    // 准备调用代理集合
     if (invocationHandlers == null) {
       invocationHandlers = new ArrayList<DelegatingInvocationHandler<T>>();
     }
 
-    DelegatingInvocationHandler<T> invocationHandler =
-        new DelegatingInvocationHandler<T>();
+    // 调用代理处理器
+    DelegatingInvocationHandler<T> invocationHandler = new DelegatingInvocationHandler<T>();
     invocationHandlers.add(invocationHandler);
-
+    // 方法调用AOP拦截
     return Proxy.newProxyInstance(
       expectedType.getClassLoader(),
       new Class[] { expectedType },

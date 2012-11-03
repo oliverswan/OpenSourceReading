@@ -328,9 +328,11 @@ public class FreemarkerManager {
 
 
     protected ScopesHashModel buildScopesHashModel(ServletContext servletContext, HttpServletRequest request, HttpServletResponse response, ObjectWrapper wrapper, ValueStack stack) {
-        ScopesHashModel model = new ScopesHashModel(wrapper, servletContext, request, stack);
+        
+    	ScopesHashModel model = new ScopesHashModel(wrapper, servletContext, request, stack);
 
-        // Create hash model wrapper for servlet context (the application). We need one thread, once per servlet context
+        // Create hash model wrapper for servlet context (the application). 
+        // We need one thread, once per servlet context
         synchronized (servletContext) {
             ServletContextHashModel servletContextModel = (ServletContextHashModel) servletContext.getAttribute(ATTR_APPLICATION_MODEL);
             if (servletContextModel == null) {
@@ -508,8 +510,13 @@ public class FreemarkerManager {
 
 
     public ScopesHashModel buildTemplateModel(ValueStack stack, Object action, ServletContext servletContext, HttpServletRequest request, HttpServletResponse response, ObjectWrapper wrapper) {
-        ScopesHashModel model = buildScopesHashModel(servletContext, request, response, wrapper, stack);
-        populateContext(model, stack, action, request, response);
+        
+    	// 构建FreeMarker使用的模型
+    	ScopesHashModel model = buildScopesHashModel
+    			(servletContext, request, response, wrapper, stack);
+        
+    	populateContext(model, stack, action, request, response);
+    	
         if (tagLibraries != null) {
             for (String prefix : tagLibraries.keySet()) {
                 model.put(prefix, tagLibraries.get(prefix).getFreemarkerModels(stack, request, response));
@@ -525,9 +532,13 @@ public class FreemarkerManager {
 
     protected void populateContext(ScopesHashModel model, ValueStack stack, Object action, HttpServletRequest request, HttpServletResponse response) {
         // put the same objects into the context that the velocity result uses
-        Map standard = ContextUtil.getStandardContext(stack, request, response);
+        
+    	// 将相同的objects放入到velocity result使用的context
+    	// 将前面创建的ScopesHashModel，都放入到standard elocity result使用的context
+    	Map standard = ContextUtil.getStandardContext(stack, request, response);
         model.putAll(standard);
 
+        // 如果请求中有异常属性，则放入到model中
         // support for JSP exception pages, exposing the servlet or JSP exception
         Throwable exception = (Throwable) request.getAttribute("javax.servlet.error.exception");
 

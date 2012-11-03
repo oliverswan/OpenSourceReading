@@ -22,26 +22,31 @@ import java.util.ResourceBundle;
 
 
 /**
- * Provides access to {@link ResourceBundle}s and their underlying text messages.
- * Implementing classes can delegate {@link TextProviderSupport}. Messages will be
- * searched in multiple resource bundles, startinag with the one associated with
- * this particular class (action in most cases), continuing to try the message
- * bundle associated with each superclass as well. It will stop once a bundle is
- * found that contains the given text. This gives a cascading style that allow
+ * 提供对ResourceBundle的存取，和根本的文本信息
+ * 实现类可以委托 TextProviderSupport
+ * 
+ * Messages会在多个resource bundles中查询, 从与这个类绑定的那个RB开始。
+ * 一般是Action类，绑定的TextProvider？然后尝试与父类绑定的RB
+ * 
+ * 如果找到的话就会停止查找. This gives a cascading style that allow
  * global texts to be defined for an application base class.
  * <p/>
- * You can override {@link LocaleProvider#getLocale()} to change the behaviour of how
- * to choose locale for the bundles that are returned. Typically you would
- * use the {@link LocaleProvider} interface to get the users configured locale.
+ * 
+ * 可以重写LocaleProvider#getLocale()来改变如何为返回的bundles选择locale
+ * 
+ * 通常你使用LocaleProvider来获取用户配置的Locale
  * <p/>
- * When you want to use your own implementation for Struts 2 project you have to define following
- * bean and constant in struts.xml:
- * &lt;bean class=&quot;org.demo.MyTextProvider&quot; name=&quot;myTextProvider&quot; type=&quot;com.opensymphony.xwork2.TextProvider&quot; /&gt;
- * &lt;constant name=&quot;struts.xworkTextProvider&quot; value=&quot;myTextProvider&quot; /&gt;
+ * 
+ * 如果要使用自己的实现
+ * 需要在struts.xml中定义下面的bean和常量:
+ * <bean 
+ * 	class="org.demo.MyTextProvider" 
+ * 	name="myTextProvider" 
+ * 	type="com.opensymphony.xwork2.TextProvider" />
+ * <constant name="struts.xworkTextProvider" value="myTextProvider" />
  * <p/>
- * if you want to also use your implemntation for framework's messages define another constant (remember to put
- * into it all framework messages)
- * &lt;constant name=&quot;system&quot; value=&quot;myTextProvider&quot; /&gt;
+ * 如果需要实现自己的框架信息，需要配置以下常量
+ * <constant name="system" value="myTextProvider" />
  * <p/>
  * Take a look on {@link com.opensymphony.xwork2.ActionSupport} for example TextProvider implemntation.
  *

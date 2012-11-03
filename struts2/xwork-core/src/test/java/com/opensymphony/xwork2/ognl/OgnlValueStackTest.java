@@ -87,8 +87,9 @@ public class OgnlValueStackTest extends XWorkTestCase {
         dog.setAge(12);
         dog.setName("Rover");
         dog.setChildAges(new int[]{1, 2});
-
+        // 将dog压栈
         vs.push(dog);
+        // 指定为String为期望类型的话，自动转换
         assertEquals("1, 2", vs.findValue("childAges", String.class));
     }
 
@@ -98,6 +99,7 @@ public class OgnlValueStackTest extends XWorkTestCase {
         Dog dog = new Dog();
         vs.push(dog);
         try {
+        	// 未取到值的话要抛出异常
             vs.findValue("bite", true);
             fail("Failed to throw exception on EL error");
         } catch (Exception ex) {
@@ -112,9 +114,12 @@ public class OgnlValueStackTest extends XWorkTestCase {
         Foo foo = new Foo();
         BarJunior barjr = new BarJunior();
         foo.setBarJunior(barjr);
+        // foo --> barjr
         vs.push(foo);
 
         assertNull(barjr.getTitle());
+        
+        // 不会抛出异常因为父类定义有该变量
         vs.findValue("barJunior.title", true);
     }
 
@@ -176,6 +181,7 @@ public class OgnlValueStackTest extends XWorkTestCase {
     public void testFailsOnMethodThatThrowsException() {
         SimpleAction action = new SimpleAction();
         OgnlValueStack stack = createValueStack();
+        // 将Action入栈
         stack.push(action);
 
         action.setThrowException(true);
@@ -207,6 +213,7 @@ public class OgnlValueStackTest extends XWorkTestCase {
         dog.setHates(new Cat());
         vs.push(dog);
         try {
+        	// Cat没有这个属性
             vs.findValue("hates.someprop", true);
             fail("Failed to throw exception on EL missing nested property");
         } catch (Exception ex) {
@@ -220,7 +227,7 @@ public class OgnlValueStackTest extends XWorkTestCase {
         Dog dog = new Dog();
         dog.setAge(12);
         dog.setName("Rover");
-
+        // 放入一个dog
         vs.push(dog);
         assertEquals("Rover", vs.findValue("name", String.class));
     }

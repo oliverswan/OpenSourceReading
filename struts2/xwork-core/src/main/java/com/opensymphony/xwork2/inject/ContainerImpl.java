@@ -37,6 +37,7 @@ class ContainerImpl implements Container {
 	// 用来为不同类型的成员创建实例的工厂，最后注入的就是这个工厂创建的实例
 	final Map<Key<?>, InternalFactory<?>> factories;
 	
+	// 类型--->names
 	final Map<Class<?>, Set<String>> factoryNamesByType;
 
 	ContainerImpl( Map<Key<?>, InternalFactory<?>> factories ) {
@@ -70,12 +71,13 @@ class ContainerImpl implements Container {
 	 * 一个class类型映射一个Injector列表
 	 */
 	final Map<Class<?>, List<Injector>> injectors =
-			// 引用缓存
+			// 一个Map，如果key或者value的引用没了，则删除Entry
 			new ReferenceCache<Class<?>, List<Injector>>() {
+		
+				// 如果值还没有被缓存，则会创建
 				@Override
 				protected List<Injector> create( Class<?> key ) {
 					List<Injector> injectors = new ArrayList<Injector>();
-					// 每当请求的时候，都会为key类型的class添加injectors
 					addInjectors(key, injectors);
 					return injectors;
 				}
@@ -419,13 +421,14 @@ class ContainerImpl implements Container {
 		}
 
 		/**
-		 * Construct an instance. Returns {@code Object} instead of {@code T} because it may return a proxy.
+		 * 创建一个实例，返回Object,而不是期望的T，因为有可能返回一个代理
 		 */
 		Object construct( InternalContext context, Class<? super T> expectedType ) {
-			ConstructionContext<T> constructionContext =
-					context.getConstructionContext(this);
+			// 获取ConstructionContext
+			ConstructionContext<T> constructionContext = context.getConstructionContext(this);
 
-			// We have a circular reference between constructors. Return a proxy.
+			// 在构造函数中有一个循环依赖，所以创建一个代理
+			// 比如A的构造函数中@Inject B，而B的构造函数中@Inject A
 			if (constructionContext.isConstructing()) {
 				// TODO (crazybob): if we can't proxy this object, can we proxy the
 				// other object?
@@ -434,6 +437,7 @@ class ContainerImpl implements Container {
 
 			// If we're re-entering this factory while injecting fields or methods,
 			// return the same instance. This prevents infinite loops.
+			// 避免死循环
 			T t = constructionContext.getCurrentReference();
 			if (t != null) {
 				return t;
@@ -446,6 +450,7 @@ class ContainerImpl implements Container {
 					Object[] parameters =
 							getParameters(constructor, context, parameterInjectors);
 					t = constructor.newInstance(parameters);
+					// 设置新创建的实例为delegate,后面再创建循环依赖的时候，方法调用都会代理给本实例
 					constructionContext.setProxyDelegates(t);
 				} finally {
 					constructionContext.finishConstruction();
@@ -508,6 +513,7 @@ class ContainerImpl implements Container {
 		return parameters;
 	}
 
+	// 会被CallInContext
 	void inject( Object o, InternalContext context ) {
 		// 获取o对应的所有injector，如果没有就会创建injectors并添加对应类型所有的injector
 		List<Injector> injectors = this.injectors.get(o.getClass());
@@ -530,6 +536,7 @@ class ContainerImpl implements Container {
 	@SuppressWarnings("unchecked")
 	<T> T getInstance( Class<T> type, String name, InternalContext context ) {
 		ExternalContext<?> previous = context.getExternalContext();
+		// 使用当前的ExternalContext
 		Key<T> key = Key.newInstance(type, name);
 		context.setExternalContext(ExternalContext.newInstance(null, key, this));
 		try {
@@ -599,17 +606,20 @@ class ContainerImpl implements Container {
 			};
 
 	/**
-	 * Looks up thread local context. Creates (and removes) a new context if necessary.
+	 * 在当前线程的Context中调用
 	 */
 	<T> T callInContext( ContextualCallable<T> callable ) {
 		Object[] reference = localContext.get();
+		
+		// 如果线程本地的contexts是空的
 		if (reference[0] == null) {
-			// 本实例就是内部context
+			// new一个
 			reference[0] = new InternalContext(this);
 			try {
+				// 调用
 				return callable.call((InternalContext) reference[0]);
 			} finally {
-				// Only remove the context if this call created it.
+				// 如果本次调用的话，则用完删除
 				reference[0] = null;
 				// WW-3768: ThreadLocal was not removed
 				localContext.remove();

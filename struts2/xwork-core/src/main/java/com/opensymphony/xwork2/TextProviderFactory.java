@@ -35,7 +35,8 @@ public class TextProviderFactory {
     }
 
     public TextProvider createInstance(Class clazz, LocaleProvider provider) {
-        TextProvider instance = getTextProvider(clazz, provider);
+        // clazz是Action的class,LocaleProvider也是Action的实例
+    	TextProvider instance = getTextProvider(clazz, provider);
         if (instance instanceof ResourceBundleTextProvider) {
             ((ResourceBundleTextProvider) instance).setClazz(clazz);
             ((ResourceBundleTextProvider) instance).setLocaleProvider(provider);

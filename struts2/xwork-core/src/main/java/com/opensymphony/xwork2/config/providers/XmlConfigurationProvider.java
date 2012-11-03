@@ -52,8 +52,7 @@ import java.util.*;
 
 
 /**
- * Looks in the classpath for an XML file, "xwork.xml" by default,
- * and uses it for the XWork configuration.
+ * 检索类路径里的xwork.xml，并使用它作为Xwork配置
  *
  * @author tmjee
  * @author Rainer Hermanns
@@ -128,6 +127,7 @@ public class XmlConfigurationProvider implements ConfigurationProvider {
     public void init(Configuration configuration) {
         this.configuration = configuration;
         this.includedFileNames = configuration.getLoadedFileNames();
+        // 如果不是struts2，则xwork.xml
         loadDocuments(configFileName);
     }
 
@@ -174,11 +174,12 @@ public class XmlConfigurationProvider implements ConfigurationProvider {
             LOG.info("Parsing configuration file [" + configFileName + "]");
         }
         Map<String, Node> loadedBeans = new HashMap<String, Node>();
+        // 遍历所有的document
         for (Document doc : documents) {
             Element rootElement = doc.getDocumentElement();
             NodeList children = rootElement.getChildNodes();
             int childSize = children.getLength();
-
+            // 遍历所有的子元素
             for (int i = 0; i < childSize; i++) {
                 Node childNode = children.item(i);
 
@@ -186,7 +187,7 @@ public class XmlConfigurationProvider implements ConfigurationProvider {
                     Element child = (Element) childNode;
 
                     final String nodeName = child.getNodeName();
-
+                    
                     if ("bean".equals(nodeName)) {
                         String type = child.getAttribute("type");
                         String name = child.getAttribute("name");
@@ -212,6 +213,7 @@ public class XmlConfigurationProvider implements ConfigurationProvider {
                         }
 
                         try {
+                        	// 加载bean元素指定的
                             Class cimpl = ClassLoaderUtil.loadClass(impl, getClass());
                             Class ctype = cimpl;
                             if (StringUtils.isNotEmpty(type)) {
@@ -267,7 +269,7 @@ public class XmlConfigurationProvider implements ConfigurationProvider {
             }
         }
     }
-
+    // 
     public void loadPackages() throws ConfigurationException {
         List<Element> reloads = new ArrayList<Element>();
         for (Document doc : documents) {

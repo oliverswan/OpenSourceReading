@@ -94,7 +94,7 @@ import java.util.Locale;
  * <pre>
  * <!-- START SNIPPET: example -->
  *
- * &lt;result name="success" type="freemarker"&gt;foo.ftl&lt;/result&gt;
+ * <result name="success" type="freemarker">foo.ftl</result>
  *
  * <!-- END SNIPPET: example -->
  * </pre>
@@ -149,6 +149,7 @@ public class FreemarkerResult extends StrutsResultSupport {
      * The template locationArg has already been interoplated for any variable substitutions
      * <p/>
      * this method obtains the freemarker configuration and the object wrapper from the provided hooks.
+     * 
      * It them implements the template processing workflow by calling the hooks for
      * preTemplateProcess and postTemplateProcess
      */

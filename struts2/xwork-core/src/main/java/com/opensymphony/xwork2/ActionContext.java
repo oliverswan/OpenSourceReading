@@ -40,8 +40,13 @@ import java.util.Map;
  * @author Bill Lynch (docs)
  */
 public class ActionContext implements Serializable {
+	
+	// 每个线程有自己的静态actionContext
     static ThreadLocal actionContext = new ThreadLocal();
 
+    // 每个实例用来保存键值对
+    Map<String, Object> context;
+    
     /**
      * Constant that indicates the action is running under a "development mode".
      * This mode provides more feedback that is useful for developers but probably
@@ -100,7 +105,7 @@ public class ActionContext implements Serializable {
      */
     public static final String CONTAINER = "com.opensymphony.xwork2.ActionContext.container";
     
-    Map<String, Object> context;
+    
 
 
     /**
@@ -274,8 +279,8 @@ public class ActionContext implements Serializable {
     }
 
     /**
-     * Returns a Map of the HttpServletRequest parameters when in a servlet environment or a generic Map of
-     * parameters otherwise.
+     * 在Servlet环境下，返回一个HttpServletRequest组成的Map
+     * 否则返回一个普通Map
      *
      * @return a Map of HttpServletRequest parameters or a multipart map when in a servlet environment, or a
      *         generic Map of parameters otherwise.

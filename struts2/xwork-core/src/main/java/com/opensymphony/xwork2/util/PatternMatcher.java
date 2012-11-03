@@ -20,6 +20,8 @@ package com.opensymphony.xwork2.util;
 import java.util.Map;
 
 /**
+ * 对一个值编译并匹配一个模式
+ * 
  * Compiles and matches a pattern against a value
  * 
  * @since 2.1

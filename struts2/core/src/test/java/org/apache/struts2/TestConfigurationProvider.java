@@ -77,6 +77,7 @@ public class TestConfigurationProvider implements ConfigurationProvider {
     /**
      * Initializes the configuration object.
      */
+    // 加载Packages,这里是代码添加
     public void loadPackages() {
 
         HashMap successParams = new HashMap();
@@ -144,7 +145,8 @@ public class TestConfigurationProvider implements ConfigurationProvider {
     }
 
     public void register(ContainerBuilder builder, LocatableProperties props) throws ConfigurationException {
-        if (!builder.contains(ObjectFactory.class)) {
+        // 为builder注入2个Factory
+    	if (!builder.contains(ObjectFactory.class)) {
             builder.factory(ObjectFactory.class);
         }
         if (!builder.contains(ActionProxyFactory.class)) {

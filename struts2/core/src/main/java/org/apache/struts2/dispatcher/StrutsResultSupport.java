@@ -36,21 +36,24 @@ import com.opensymphony.xwork2.util.logging.LoggerFactory;
 /**
  * <!-- START SNIPPET: javadoc -->
  *
- * A base class for all Struts action execution results.
- * The "location" param is the default parameter, meaning the most common usage of this result would be:
+ * 所有Struts Action执行结果的基类.
+ * 
+ * The "location" param is the default parameter, meaning the 
+ * most common usage of this result would be:
  * <p/>
- * This class provides two common parameters for any subclass:
+ * 为任何子类提供两个通用参数:
  * <ul>
- * <li>location - the location to go to after execution (could be a jsp page or another action).
+ * <li>location - 执行完要去的地方一般是jsp或者action (could be a jsp page or another action).
  * It can be parsed as per the rules definied in the
  * {@link TextParseUtil#translateVariables(java.lang.String, com.opensymphony.xwork2.util.ValueStack) translateVariables}
  * method</li>
- * <li>parse - true by default. If set to false, the location param will not be parsed for expressions</li>
- * <li>encode - false by default. If set to false, the location param will not be url encoded. This only have effect when parse is true</li>
+ * <li>parse - 默认为true，如果是false那么location参数的值，不会被作为表达式，进行解析</li>
+ * <li>encode - 默认为flase，location参数的值不会被url encoded. 
+ * This only have effect when parse is true</li>
  * </ul>
  *
  * <b>NOTE:</b>
- * The encode param will only have effect when parse is true
+ * The encode 参数必须是当parse为true的时候，才有效
  *
  * <!-- END SNIPPET: javadoc -->
  *
@@ -62,18 +65,18 @@ import com.opensymphony.xwork2.util.logging.LoggerFactory;
  * In the struts.xml configuration file, these would be included as:
  * <p/>
  * <pre>
- *  &lt;result name="success" type="redirect"&gt;
- *      &lt;param name="<b>location</b>"&gt;foo.jsp&lt;/param&gt;
- *  &lt;/result&gt;</pre>
+ *  <result name="success" type="redirect">
+ *      <param name="location">foo.jsp</param>
+ *  </result></pre>
  * <p/>
  * or
  * <p/>
  * <pre>
- *  &lt;result name="success" type="redirect" &gt;
- *      &lt;param name="<b>location</b>"&gt;foo.jsp?url=${myUrl}&lt;/param&gt;
- *      &lt;param name="<b>parse</b>"&gt;true&lt;/param&gt;
- *      &lt;param name="<b>encode</b>"&gt;true&lt;/param&gt;
- *  &lt;/result&gt;</pre>
+ *  <result name="success" type="redirect" >
+ *      <param name="<b>location</b>">foo.jsp?url=${myUrl}</param>
+ *      <param name="<b>parse</b>">true</param>
+ *      <param name="<b>encode</b>">true</param>
+ *  </result></pre>
  * <p/>
  * In the above case, myUrl will be parsed against Ognl Value Stack and then
  * URL encoded.
@@ -81,7 +84,7 @@ import com.opensymphony.xwork2.util.logging.LoggerFactory;
  * or when using the default parameter feature
  * <p/>
  * <pre>
- *  &lt;result name="success" type="redirect"&gt;<b>foo.jsp</b>&lt;/result&gt;</pre>
+ *  <result name="success" type="redirect"><b>foo.jsp</b></result></pre>
  * <p/>
  * You should subclass this class if you're interested in adding more parameters or functionality
  * to your Result. If you do subclass this class you will need to
@@ -90,10 +93,10 @@ import com.opensymphony.xwork2.util.logging.LoggerFactory;
  * Any custom result can be defined in struts.xml as:
  * <p/>
  * <pre>
- *  &lt;result-types&gt;
+ *  <result-types>
  *      ...
- *      &lt;result-type name="myresult" class="com.foo.MyResult" /&gt;
- *  &lt;/result-types&gt;</pre>
+ *      <result-type name="myresult" class="com.foo.MyResult" />
+ *  </result-types></pre>
  * <p/>
  * Please see the {@link com.opensymphony.xwork2.Result} class for more info on Results in general.
  *

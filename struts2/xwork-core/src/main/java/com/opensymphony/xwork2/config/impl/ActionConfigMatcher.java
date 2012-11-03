@@ -30,11 +30,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * <p> Matches paths against pre-compiled wildcard expressions pulled from
- * action configs. It uses the wildcard matcher from the Apache Cocoon
- * project. Patterns will be matched in the order they exist in the 
- * config file. The first match wins, so more specific patterns should be
- * defined before less specific patterns.
+ * 使用Apache Cocoon来从 action配置中的预编译的表达式匹配到路径
+ * 模式会按照他们再配置文件中的位置来进行匹配。
  */
 public class ActionConfigMatcher extends AbstractMatcher<ActionConfig> implements Serializable {
    
@@ -74,18 +71,19 @@ public class ActionConfigMatcher extends AbstractMatcher<ActionConfig> implement
     }
     
     /**
-     * <p> Finds and precompiles the wildcard patterns from the ActionConfig
-     * "path" attributes. ActionConfig's will be evaluated in the order they
-     * exist in the config file. Only paths that actually contain a
-     * wildcard will be compiled. </p>
+     * 查找并预编译来自ActionConfig的path属性的wildcard模式
      * 
-     * <p>Patterns can optionally be matched "loosely".  When
+     * <p>Patterns can optionally be matched "loosely".  
+     * 
+     * When
      * the end of the pattern matches \*[^*]\*$ (wildcard, no wildcard,
      * wildcard), if the pattern fails, it is also matched as if the 
-     * last two characters didn't exist.  The goal is to support the 
+     * last two characters didn't exist.  
+     * 
+     * The goal is to support the 
      * legacy "*!*" syntax, where the "!*" is optional.</p> 
      *
-     * @param configs An array of ActionConfig's to process
+     * @param configs 需要处理的ActionConfigs
      * @param looseMatch To loosely match wildcards or not
      */
     public ActionConfigMatcher(PatternMatcher<?> patternMatcher,
@@ -98,8 +96,7 @@ public class ActionConfigMatcher extends AbstractMatcher<ActionConfig> implement
     }
 
     /**
-     * <p> Clones the ActionConfig and its children, replacing various
-     * properties with the values of the wildcard-matched strings. </p>
+     * 克隆ActionConfig和他的孩子们,使用wildcard-matched字符串的值替换各种属性
      *
      * @param path The requested path
      * @param orig The original ActionConfig

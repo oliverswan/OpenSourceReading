@@ -42,16 +42,17 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 
 /**
- * Provides support for localization in XWork.
+ * 为XWork提供本地化
  * <p/>
  * <!-- START SNIPPET: searchorder -->
- * Resource bundles are searched in the following order:<p/>
+ * 按照下面的顺序查找ResourceBundles:<p/>
  * <p/>
  * <ol>
  * <li>ActionClass.properties</li>
  * <li>Interface.properties (every interface and sub-interface)</li>
  * <li>BaseClass.properties (all the way to Object.properties)</li>
- * <li>ModelDriven's model (if implements ModelDriven), for the model object repeat from 1</li>
+ * <li>ModelDriven's model (if implements ModelDriven), 
+ * 	for the model object repeat from 1</li>
  * <li>package.properties (of the directory where class is located and every parent directory all the way to the root directory)</li>
  * <li>search up the i18n message key hierarchy itself</li>
  * <li>global resource properties</li>
@@ -60,7 +61,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * <!-- END SNIPPET: searchorder -->
  * <p/>
  * <!-- START SNIPPET: packagenote -->
- * To clarify #5, while traversing the package hierarchy, Struts 2 will look for a file package.properties:<p/>
+ * To clarify #5, while traversing the package hierarchy, 
+ * Struts 2 will look for a file package.properties:<p/>
  * com/<br/>
  * &nbsp; acme/<br/>
  * &nbsp; &nbsp; package.properties<br/>
@@ -70,7 +72,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * &nbsp; &nbsp; &nbsp; FooAction.properties<br/>
  * <p/>
  * If FooAction.properties does not exist, com/acme/action/package.properties will be searched for, if
- * not found com/acme/package.properties, if not found com/package.properties, etc.
+ * not found com/acme/package.properties, 
+ * if not found com/package.properties, etc.
  * <p/>
  * <!-- END SNIPPET: packagenote -->
  * <p/>
@@ -87,10 +90,13 @@ import java.util.concurrent.CopyOnWriteArrayList;
  */
 public class LocalizedTextUtil {
 
+	// 静态默认Bundles列表
     private static final List<String> DEFAULT_RESOURCE_BUNDLES = new CopyOnWriteArrayList<String>();
     private static final Logger LOG = LoggerFactory.getLogger(LocalizedTextUtil.class);
     private static boolean reloadBundles = false;
+    
     private static final ResourceBundle EMPTY_BUNDLE = new EmptyResourceBundle();
+    // 静态Bundles Map
     private static final ConcurrentMap<String, ResourceBundle> bundlesMap = new ConcurrentHashMap<String, ResourceBundle>();
     private static final ConcurrentMap<MessageFormatKey, MessageFormat> messageFormats = new ConcurrentHashMap<MessageFormatKey, MessageFormat>();
 

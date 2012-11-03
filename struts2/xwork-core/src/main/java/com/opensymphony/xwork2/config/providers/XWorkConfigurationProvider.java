@@ -125,6 +125,7 @@ public class XWorkConfigurationProvider implements ConfigurationProvider {
                 .factory(TextProvider.class, "system", DefaultTextProvider.class, Scope.SINGLETON)
                 .factory(TextProvider.class, TextProviderSupport.class, Scope.SINGLETON)
                 .factory(LocaleProvider.class, DefaultLocaleProvider.class, Scope.SINGLETON)
+                // 没有name的话就是有default
                 .factory(OgnlUtil.class, Scope.SINGLETON)
                 .factory(XWorkBasicConverter.class, Scope.SINGLETON)
                 .factory(CollectionConverter.class, Scope.SINGLETON)

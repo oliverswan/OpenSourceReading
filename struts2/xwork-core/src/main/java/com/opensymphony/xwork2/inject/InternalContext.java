@@ -27,8 +27,11 @@ import java.util.Map;
 class InternalContext {
 
   final ContainerImpl container;
+  
+  
   final Map<Object, ConstructionContext<?>> constructionContexts =
       new HashMap<Object, ConstructionContext<?>>();
+  
   Scope.Strategy scopeStrategy;
   ExternalContext<?> externalContext;
 
@@ -62,6 +65,7 @@ class InternalContext {
     ConstructionContext<T> constructionContext =
         (ConstructionContext<T>) constructionContexts.get(key);
     if (constructionContext == null) {
+      // 如果没有key对应的值就新建
       constructionContext = new ConstructionContext<T>();
       constructionContexts.put(key, constructionContext);
     }

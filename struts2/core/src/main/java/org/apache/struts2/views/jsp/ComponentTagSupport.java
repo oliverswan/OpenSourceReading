@@ -47,6 +47,7 @@ public abstract class ComponentTagSupport extends StrutsBodyTagSupport {
     public int doStartTag() throws JspException {
         component = getBean(getStack(), (HttpServletRequest) pageContext.getRequest(), (HttpServletResponse) pageContext.getResponse());
         Container container = Dispatcher.getInstance().getContainer();
+        // 对UIbean进行注入
         container.inject(component);
         
         populateParams();

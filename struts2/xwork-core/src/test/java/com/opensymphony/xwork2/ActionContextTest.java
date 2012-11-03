@@ -36,7 +36,8 @@ public class ActionContextTest extends XWorkTestCase {
 
     private ActionContext context;
 
-    @Override public void setUp() throws Exception {
+    @Override 
+    public void setUp() throws Exception {
         super.setUp();
         ValueStack valueStack = container.getInstance(ValueStackFactory.class).createValueStack();
         Map<String, Object> extraContext = valueStack.getContext();
@@ -48,11 +49,18 @@ public class ActionContextTest extends XWorkTestCase {
 
         Map<String, Object> params = new HashMap<String, Object>();
         params.put(PARAMETERS_KEY, PARAMETERS_KEY);
+        
+        // 在extraContext中添加额外三个map
         extraContext.put(ActionContext.APPLICATION, application);
         extraContext.put(ActionContext.SESSION, session);
         extraContext.put(ActionContext.PARAMETERS, params);
+        
         extraContext.put(ActionContext.ACTION_NAME, ACTION_NAME);
+        
+        // 有一个静态的actionContext线程本地变量 
         context = new ActionContext(extraContext);
+        
+        // 设置为线程本地
         ActionContext.setContext(context);
     }
 
@@ -64,6 +72,7 @@ public class ActionContextTest extends XWorkTestCase {
     }
 
     public void testGetContext() {
+    	// 保证取出来的线程本地context是之前保存的那个
         ActionContext threadContext = ActionContext.getContext();
         assertEquals(context, threadContext);
     }

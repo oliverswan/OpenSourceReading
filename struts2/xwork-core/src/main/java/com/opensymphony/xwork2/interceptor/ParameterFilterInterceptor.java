@@ -28,11 +28,14 @@ import java.util.TreeMap;
 /**
  * <!-- START SNIPPET: description -->
  *
- * The Parameter Filter Interceptor blocks parameters from getting
- * to the rest of the stack or your action. You can use multiple 
- * parameter filter interceptors for a given action, so, for example,
- * you could use one in your default stack that filtered parameters
- * you wanted blocked from every action and those you wanted blocked 
+ * 拦截参数到达栈的下面或者Action.
+ * 
+ * 你可以为一个Action使用多个参数过滤拦截器
+ * 
+ * 比如,
+ * 你可以使用一个参数拦截器，为所有action过滤所有需要block的参数
+ * 
+ * and those you wanted blocked 
  * from an individual action you could add an additional interceptor
  * for each action.
  * 
@@ -75,19 +78,19 @@ import java.util.TreeMap;
  * 
  * <pre>
  * <!-- START SNIPPET: example -->
- * &lt;interceptors&gt;
+ * <interceptors>
  *   ...
- *   &lt;interceptor name="parameterFilter" class="com.opensymphony.xwork2.interceptor.ParameterFilterInterceptor"/&gt;
+ *   <interceptor name="parameterFilter" class="com.opensymphony.xwork2.interceptor.ParameterFilterInterceptor"/>
  *   ...
- * &lt;/interceptors&gt;
+ * </interceptors>
  * 
- * &lt;action ....&gt;
+ * <action ....>
  *   ...
- *   &lt;interceptor-ref name="parameterFilter"&gt;
- *     &lt;param name="blocked"&gt;person,person.address.createDate,personDao&lt;/param&gt;
- *   &lt;/interceptor-ref&gt;
+ *   <interceptor-ref name="parameterFilter">
+ *     <param name="blocked">person,person.address.createDate,personDao</param>
+ *   </interceptor-ref>
  *   ...
- * &lt;/action&gt;
+ * </action>
  * <!-- END SNIPPET: example -->
  * </pre>
  * 

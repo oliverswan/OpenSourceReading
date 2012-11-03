@@ -37,12 +37,11 @@ import java.util.Map;
 
 
 /**
- * ObjectFactory is responsible for building the core framework objects. Users may register their 
- * own implementation of the ObjectFactory to control instantiation of these Objects.
- * <p/>
- * This default implementation uses the {@link #buildBean(Class,java.util.Map) buildBean} 
- * method to create all classes (interceptors, actions, results, etc).
- * <p/>
+ * ObjectFactory用来创建框架核心对象. 
+ * 用户可以注册自己的实现，来控制这些对象的初始化。
+ * 
+ * 这个默认实现，使用buildBean(Class,java.util.Map)方法，
+ * 来创建所有这些对象(interceptors, actions, results, etc).
  *
  * @author Jason Carreira
  */

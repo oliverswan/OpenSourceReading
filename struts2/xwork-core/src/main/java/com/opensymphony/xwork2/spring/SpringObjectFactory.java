@@ -31,10 +31,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Simple implementation of the ObjectFactory that makes use of Spring's application context if one has been configured,
- * before falling back on the default mechanism of instantiating a new class using the class name. <p/> In order to use
- * this class in your application, you will need to instantiate a copy of this class and set it as XWork's ObjectFactory
- * before the xwork.xml file is parsed. In a servlet environment, this could be done using a ServletContextListener.
+ * 使用Spring application Context实现的ObjectFactory，如果没有被配置的话。
+ * 
+ * before falling back on the default mechanism of instantiating 
+ * a new class using the class name. <p/> 
+ * 
+ * 为了使用本类，你需要在xwork.xml被解析之前，实例化一个本类的实例，然后设置为XWork的 ObjectFactory
+ * 这在servlet环境中，可以通过一个ServletContextListener实现
  *
  * @author Simon Stewart (sms@lateral.net)
  */

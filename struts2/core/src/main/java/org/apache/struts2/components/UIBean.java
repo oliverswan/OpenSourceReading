@@ -52,7 +52,9 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * UIBean is the standard superclass of all Struts UI componentns.
- * It defines common Struts and html properties all UI components should present for usage.
+ * 
+ * It defines common Struts and html properties 
+ * all UI components should present for usage.
  *
  * <!-- START SNIPPET: templateRelatedAttributes -->
  *
@@ -363,56 +365,56 @@ import java.util.concurrent.ConcurrentHashMap;
  * <pre>
  * <!-- START SNIPPET: tooltipexample -->
  *
- * &lt;!-- Example 1: --&gt;
- * &lt;s:form
+ * <!-- Example 1: -->
+ * <s:form
  *          tooltipDelay="500"
- *          tooltipIconPath="/myImages/myIcon.gif" .... &gt;
+ *          tooltipIconPath="/myImages/myIcon.gif" .... >
  *   ....
- *     &lt;s:textfield label="Customer Name" tooltip="Enter the customer name" .... /&gt;
+ *     <s:textfield label="Customer Name" tooltip="Enter the customer name" .... />
  *   ....
- * &lt;/s:form&gt;
+ * </s:form>
  *
- * &lt;!-- Example 2: --&gt;
- * &lt;s:form
+ * <!-- Example 2: -->
+ * <s:form
  *          tooltipDelay="500"
- *          tooltipIconPath="/myImages/myIcon.gif" .... &gt;
+ *          tooltipIconPath="/myImages/myIcon.gif" .... >
  *   ....
- *     &lt;s:textfield label="Address"
+ *     <s:textfield label="Address"
  *          tooltip="Enter your address"
- *          tooltipDelay="5000" /&gt;
+ *          tooltipDelay="5000" />
  *   ....
- * &lt;/s:form&gt;
+ * </s:form>
  *
  *
- * &lt;-- Example 3: --&gt;
- * &lt;s:textfield
+ * <-- Example 3: -->
+ * <s:textfield
  *        label="Customer Name"
- *        tooltip="One of our customer Details"&gt;
- *        &lt;s:param name="tooltipDelay"&gt;
+ *        tooltip="One of our customer Details">
+ *        <s:param name="tooltipDelay">
  *             500
- *        &lt;/s:param&gt;
- *        &lt;s:param name="tooltipIconPath"&gt;
+ *        </s:param>
+ *        <s:param name="tooltipIconPath">
  *             /myImages/myIcon.gif
- *        &lt;/s:param&gt;
- * &lt;/s:textfield&gt;
+ *        </s:param>
+ * </s:textfield>
  *
  *
- * &lt;-- Example 4: --&gt;
- * &lt;s:textfield
+ * <-- Example 4: -->
+ * <s:textfield
  *          label="Customer Address"
- *          tooltip="Enter The Customer Address" &gt;
- *          &lt;s:param
+ *          tooltip="Enter The Customer Address" >
+ *          <s:param
  *              name="tooltipDelay"
- *              value="500" /&gt;
- * &lt;/s:textfield&gt;
+ *              value="500" />
+ * </s:textfield>
  *
  *
- * &lt;-- Example 5: --&gt;
- * &lt;s:textfield
+ * <-- Example 5: -->
+ * <s:textfield
  *          label="Customer Telephone Number"
  *          tooltip="Enter customer Telephone Number"
  *          tooltipDelay="500"
- *          tooltipIconPath="/myImages/myIcon.gif" /&gt;
+ *          tooltipIconPath="/myImages/myIcon.gif" />
  *
  * <!-- END SNIPPET: tooltipexample -->
  * </pre>
@@ -515,7 +517,9 @@ public abstract class UIBean extends Component {
     public boolean end(Writer writer, String body) {
         evaluateParams();
         try {
+        	// 将组件body输出到writer,但是还没有flush
             super.end(writer, body, false);
+            
             mergeTemplate(writer, buildTemplateName(template, getDefaultTemplate()));
         } catch (Exception e) {
             throw new StrutsException(e);
@@ -552,7 +556,8 @@ public abstract class UIBean extends Component {
     }
 
     protected void mergeTemplate(Writer writer, Template template) throws Exception {
-        final TemplateEngine engine = templateEngineManager.getTemplateEngine(template, templateSuffix);
+        // templateEngineManager 肯定不为空么？
+    	final TemplateEngine engine = templateEngineManager.getTemplateEngine(template, templateSuffix);
         if (engine == null) {
             throw new ConfigurationException("Unable to find a TemplateEngine for template " + template);
         }
@@ -562,6 +567,7 @@ public abstract class UIBean extends Component {
         }
 
         final TemplateRenderingContext context = new TemplateRenderingContext(template, writer, getStack(), getParameters(), this);
+        // 使用TemplateEngine展现模板
         engine.renderTemplate(context);
     }
 

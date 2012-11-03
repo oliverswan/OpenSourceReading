@@ -22,7 +22,8 @@ import java.lang.annotation.Target;
 
 /**
  * <!-- START SNIPPET: description -->
- * Marks a action method that needs to be executed before the main action method.
+ * Marks a action method that needs to be executed 
+ * before the main action method.
  * <!-- END SNIPPET: description -->
  *
  * <p/> <u>Annotation usage:</u>

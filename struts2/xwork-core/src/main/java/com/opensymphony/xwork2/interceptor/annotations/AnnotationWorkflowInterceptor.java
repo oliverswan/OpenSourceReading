@@ -29,20 +29,20 @@ import java.util.List;
 
 /**
  * <!-- START SNIPPET: javadoc -->
- * <p>Invokes any annotated methods on the action. Specifically, it supports the following
- * annotations:
+ * <p>调用Action上任何有标注的方法. 
+ * 支持下面的标注:
+ * Before
  * <ul>
- * <li> &#64;{@link Before} - will be invoked before the action method. If the returned value is not null, it is
- * returned as the action result code</li>
- * <li> &#64;{@link BeforeResult} - will be invoked after the action method but before the result execution</li>
- * <li> &#64;{@link After} - will be invoked after the action method and result execution</li>
+ * <li>Before</li>
+ * <li>BeforeResult</li>
+ * <li>After</li>
  * </ul>
  * </p>
  * <p/>
- * <p>There can be multiple methods marked with the same annotations, but the order of their execution
- * is not guaranteed. However, the annotated methods on the superclass chain are guaranteed to be invoked before the
- * annotated method in the current class in the case of a {@link Before} annotations and after, if the annotations is
- * {@link After}.</p>
+ * <p>可以有多个方法有相同的标注,但是执行的顺序并不保证
+ * 
+ * 但是父类的标注方法，会保证在当前类的标注方法前执行。
+ * 
  * <!-- END SNIPPET: javadoc -->
  * <p/>
  * <pre>
@@ -50,7 +50,7 @@ import java.util.List;
  *  public class BaseAnnotatedAction {
  *  	protected String log = "";
  * <p/>
- *  	&#64;Before
+ *  	@Before
  *  	public String baseBefore() {
  *  		log = log + "baseBefore-";
  *  		return null;
@@ -58,7 +58,7 @@ import java.util.List;
  *  }
  * <p/>
  *  public class AnnotatedAction extends BaseAnnotatedAction {
- *  	&#64;Before
+ *  	@Before
  *  	public String before() {
  *  		log = log + "before";
  *  		return null;
@@ -69,12 +69,12 @@ import java.util.List;
  *  		return Action.SUCCESS;
  *  	}
  * <p/>
- *  	&#64;BeforeResult
+ *  	@BeforeResult
  *  	public void beforeResult() throws Exception {
  *  		log = log +"-beforeResult";
  *  	}
  * <p/>
- *  	&#64;After
+ *  	@After
  *  	public void after() {
  *  		log = log + "-after";
  *  	}
@@ -90,12 +90,12 @@ import java.util.List;
  * <p/>Configure a stack in xwork.xml that replaces the PrepareInterceptor with the AnnotationWorkflowInterceptor:
  * <pre>
  * <!-- START SNIPPET: stack -->
- * &lt;interceptor-stack name="annotatedStack"&gt;
- * 	&lt;interceptor-ref name="staticParams"/&gt;
- * 	&lt;interceptor-ref name="params"/&gt;
- * 	&lt;interceptor-ref name="conversionError"/&gt;
- * 	&lt;interceptor-ref name="annotationWorkflow"/&gt;
- * &lt;/interceptor-stack&gt;
+ * <interceptor-stack name="annotatedStack">
+ * 	<interceptor-ref name="staticParams"/>
+ * 	<interceptor-ref name="params"/>
+ * 	<interceptor-ref name="conversionError"/>
+ * 	<interceptor-ref name="annotationWorkflow"/>
+ * </interceptor-stack>
  *  <!-- END SNIPPET: stack -->
  * </pre>
  *
@@ -106,8 +106,7 @@ import java.util.List;
 public class AnnotationWorkflowInterceptor extends AbstractInterceptor implements PreResultListener {
 
     /**
-     * Discovers annotated methods on the action and calls them according to the workflow
-     *
+     * 发现Action中的标注方法，然后根据工作流程进行调用
      * @see com.opensymphony.xwork2.interceptor.Interceptor#intercept(com.opensymphony.xwork2.ActionInvocation)
      */
     public String intercept(ActionInvocation invocation) throws Exception {

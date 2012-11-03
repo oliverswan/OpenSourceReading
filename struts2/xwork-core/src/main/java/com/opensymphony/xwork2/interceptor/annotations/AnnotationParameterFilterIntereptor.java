@@ -16,14 +16,19 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Annotation based version of {@link ParameterFilterInterceptor}.
+ * 基于标注的ParameterFilterInterceptor的版本
+ * 
  * <p/>
- * This {@link Interceptor} must be placed in the stack before the {@link ParametersInterceptor}
- * When a parameter matches a field that is marked {@link Blocked} then it is removed from
- * the parameter map.
+ * 这个拦截器必须放在ParametersInterceptor之前
+ * 
+ * 当一个http请求参数与成员变量匹配的时候，如果这个成员变量有
+ * Blocked标注，那么这个参数就会被从parameter map中删除
+ * 
  * <p/>
- * If an {@link Action} class is marked with {@link BlockByDefault} then all parameters are
- * removed unless a field on the Action exists and is marked with {@link Allowed}
+ * 
+ * 如果一个Action类被标记为BlockByDefault那么所有的参数都会
+ * 被从parameter map中删除，除非某个成员变量有Allowed标记
+ * 
  *
  * @author martin.gilday
  */

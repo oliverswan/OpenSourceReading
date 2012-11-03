@@ -31,8 +31,10 @@ import com.opensymphony.xwork2.inject.Container;
 import com.opensymphony.xwork2.inject.Inject;
 
 /**
- * The TemplateEngineManager will return a template engine for the template
+ * 为模板返回一个模板引擎
  */
+// 在struts-default.xml中进行了配置，在dispatcher初始化时候，将其解析到了DI容器中
+// 后面有需要本实例的话，就Inject本类
 public class TemplateEngineManager {
     public static final String DEFAULT_TEMPLATE_TYPE_CONFIG_KEY = "struts.ui.templateSuffix";
 
