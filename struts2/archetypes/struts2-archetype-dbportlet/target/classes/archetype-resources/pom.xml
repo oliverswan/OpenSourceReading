@@ -11,7 +11,7 @@
 	<description>Struts 2 Database Portlet</description>
 
     <properties>
-        <struts2.version>2.3.5-SNAPSHOT</struts2.version>
+        <struts2.version>2.5.22</struts2.version>
     </properties>    
 
 	<dependencies>
