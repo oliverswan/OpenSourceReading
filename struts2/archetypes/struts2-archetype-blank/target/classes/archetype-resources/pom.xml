@@ -9,7 +9,7 @@
     <name>${artifactId}</name>
 
     <properties>
-        <struts2.version>2.3.5-SNAPSHOT</struts2.version>
+        <struts2.version>2.5.30</struts2.version>
     </properties>
 
     <dependencies>
